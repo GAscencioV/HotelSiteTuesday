@@ -8,24 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\DELL\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Hanser Perez\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\HotelSiteTuesday\\HotelSiteTuesday.Web\\HotelSiteTuesday.Web.csproj",
+      "projectUniqueName": "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\HotelSiteTuesday.Web\\HotelSiteTuesday.Web.csproj",
       "projectName": "HotelSiteTuesday.Web",
-      "projectPath": "C:\\HotelSiteTuesday\\HotelSiteTuesday.Web\\HotelSiteTuesday.Web.csproj",
-      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "C:\\HotelSiteTuesday\\HotelSiteTuesday.Web\\obj\\",
+      "projectPath": "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\HotelSiteTuesday.Web\\HotelSiteTuesday.Web.csproj",
+      "packagesPath": "C:\\Users\\Hanser Perez\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\HotelSiteTuesday.Web\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Hanser Perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -33,7 +28,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -46,6 +40,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -70,7 +69,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
