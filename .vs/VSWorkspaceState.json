@@ -1,11 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\HotelSiteTuesday.Domain",
-    "\\HotelSiteTuesday.Domain\\Core",
-    "\\HotelSiteTuesday.Domain\\obj",
-    "\\HotelSiteTuesday.Infraestructure"
+    "\\HotelSiteTuesday.Infraestructure",
+    "\\HotelSiteTuesday.Infraestructure\\Core",
+    "\\HotelSiteTuesday.Infraestructure\\Exceptions",
+    "\\HotelSiteTuesday.Infraestructure\\Extentions",
+    "\\HotelSiteTuesday.Infraestructure\\Interfaces"
   ],
-  "SelectedNode": "\\HotelSiteTuesday.Domain\\Core\\BaseEntity.cs",
   "PreviewInSolutionExplorer": false
 }
