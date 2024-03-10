@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelSiteTuesday.Infraestructure.Models
 {
-    public class Recepcion
+    public class RecepcionModel
     {
         public int idRecepcion { get; set; }
 

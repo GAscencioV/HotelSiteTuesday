@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelSiteTuesday.Infraestructure.Extentions
 {
-  public class Recepcion
+  public class RecepcionExtentions
     {
     }
 }
