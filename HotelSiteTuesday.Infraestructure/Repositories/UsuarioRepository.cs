@@ -1,6 +1,10 @@
 ﻿using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Context;
+using HotelSiteTuesday.Infraestructure.Core;
 using HotelSiteTuesday.Infraestructure.Interfaces;
+using HotelSiteTuesday.Infraestructure.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,86 +13,91 @@ using System.Threading.Tasks;
 
 namespace HotelSiteTuesday.Infraestructure.Repositories
 {
-    public class UsuarioRepository : IUsuarioRepository
+    public class UsuarioRepository : BaseRepository<Usuario>, IUsuarioRepository
     {
-        private readonly HotelContext _context;
+        private readonly HotelContext context;
+        private readonly ILogger<UsuarioRepository> logger;
 
-        public UsuarioRepository(HotelContext context) 
+        public UsuarioRepository(HotelContext context, ILogger<UsuarioRepository> logger) : base(context)
         {
-            _context = context;
+            this.context = context;
+            this.logger = logger;
         }
-        public void create(Usuario usuario)
+
+        public override List<Usuario> GetEntities()
+        {
+            return base.GetEntities().Where(us => !us.Estado).ToList();
+        }
+
+        public override void Update(Usuario entity)
         {
             try
             {
-                _context.Usuarios.Add(usuario);
-                _context.SaveChanges();
+                Usuario usuarioToUpdate = GetEntity(entity.IdUsuario);
+
+                usuarioToUpdate.IdRolUsuario = entity.IdRolUsuario;
+                usuarioToUpdate.NombreCompleto = entity.NombreCompleto;
+                usuarioToUpdate.Clave = entity.Clave;
+                usuarioToUpdate.Correo = entity.Correo;
+
+                this.context.Usuario.Update(usuarioToUpdate);
+                this.context.SaveChanges();
             }
             catch (Exception ex)
             {
-                throw ex;
+                this.logger.LogError("Error Actualizando el usuario.", ex.ToString());
             }
         }
+        public override void Remove(Usuario entity)
+        {
+            Usuario usuarioToRemove = GetEntity(entity.IdUsuario);
 
-        public Usuario GetUsuarioById(int idUsuario)
+            usuarioToRemove.Estado = true;
+
+            this.context.Usuario.Update(usuarioToRemove);
+            this.context.SaveChanges();
+        }
+
+        public override void Save(Usuario entity)
         {
             try
             {
-                return _context.Usuarios.Find(idUsuario);
+                if (context.Usuario.Any(us => us.Correo == entity.Correo))
+                    throw new Exception("Este correo ya existe");
+
+                this.context.Usuario.Add(entity);
+                this.context.SaveChanges();
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                this.logger.LogError("Error Guardando el usuario.", ex.ToString());
             }
         }
-
-        public List<Usuario> GetUsuarios()
+        public List<UsuarioModel> GetUsuarioByRolUsuario(int idRolUsuario)
         {
+            List<UsuarioModel> usuarios = new List<UsuarioModel>();
             try
             {
-                return _context.Usuarios.ToList();
+                var query = (from usu in this.context.Usuario
+                             join rol in this.context.RolUsuario on usu.IdRolUsuario equals rol.idRolUsuario
+                             where usu.IdRolUsuario == idRolUsuario
+                             select new UsuarioModel() 
+                             {
+                                 IdRolUsuario = rol.idRolUsuario,
+                                 descripcionRol = rol.Descripcion,
+                                 IdUsuario = usu.IdUsuario,
+                                 Clave = usu.Clave,
+                                 Correo = usu.Correo,
+                                 NombreCompleto = usu.NombreCompleto
+                             }).ToList();
+                return usuarios;
             }
             catch (Exception ex)
             {
-                throw ex;
-            }
-        }
-
-        public void remove(Usuario usuario)
-        {
-            try
-            {
-                Usuario usuarioToRemove = GetUsuarioById(usuario.IdUsuario);
-                _context.Usuarios.Remove(usuarioToRemove);
-                _context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                this.logger.LogError("Error Obtener usuarios por ID el usuario.", ex.ToString());
             }
 
-
-        }
-
-        public void update(Usuario usuario)
-        {
-            try
-            {
-                Usuario usuarioToUpdate = GetUsuarioById(usuario.IdUsuario);
-
-                usuarioToUpdate.IdRolUsuario = usuario.IdRolUsuario;
-                usuarioToUpdate.NombreCompleto = usuario.NombreCompleto;
-                usuarioToUpdate.Clave = usuario.Clave;
-                usuarioToUpdate.Correo = usuario.Correo;
-
-                _context.Usuarios.Update(usuarioToUpdate);
-                _context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return usuarios;
         }
     }
 }

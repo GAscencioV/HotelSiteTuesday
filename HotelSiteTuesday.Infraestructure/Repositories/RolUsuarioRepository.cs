@@ -1,6 +1,8 @@
 ﻿using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Context;
+using HotelSiteTuesday.Infraestructure.Core;
 using HotelSiteTuesday.Infraestructure.Interfaces;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,84 +11,63 @@ using System.Threading.Tasks;
 
 namespace HotelSiteTuesday.Infraestructure.Repositories
 {
-    public class RolUsuarioRepository : IRolUsuarioRepository
+    public class RolUsuarioRepository : BaseRepository<RolUsuario>, IRolUsuarioRepository
     {
-        private readonly HotelContext _context;
+        private readonly HotelContext context;
+        private readonly ILogger<RolUsuario> logger;
 
-        public RolUsuarioRepository(HotelContext context) 
+        public RolUsuarioRepository(HotelContext context, ILogger<RolUsuario> logger) : base(context)
         {
-            _context = context;
-        }
-        public void create(RolUsuario rolUsuario)
-        {
-            try
-            {
-                _context.RolUsuarios.Add(rolUsuario);
-                _context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            this.context = context;
+            this.logger = logger;
         }
 
-        public RolUsuario GetRolUsuarioById(int IdRolUsuario)
+        public override List<RolUsuario> GetEntities()
+        {
+            return base.GetEntities().Where(rol => !rol.Estado).ToList();
+        }
+        public override void Save(RolUsuario entity)
         {
             try
             {
-                return _context.RolUsuarios.Find(IdRolUsuario);
+                if (context.RolUsuario.Any(rol => rol.Descripcion == entity.Descripcion))
+                    throw new Exception("Este Rol de Usuario ya existe");
+
+                this.context.RolUsuario.Add(entity);
+                this.context.SaveChanges();
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                this.logger.LogError("Error Guardando el Rol de Usuario.", ex.ToString());
             }
         }
 
-        public List<RolUsuario> GetRolUsuarios()
+        public override void Update(RolUsuario entity)
         {
             try
             {
-                return _context.RolUsuarios.ToList();
+                RolUsuario RolToUpdate = GetEntity(entity.idRolUsuario);
+
+                RolToUpdate.Descripcion = entity.Descripcion;
+
+                this.context.RolUsuario.Update(RolToUpdate);
+                this.context.SaveChanges();
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                this.logger.LogError("Error Actualizando el Rol.", ex.ToString());
             }
         }
 
-        public void remove(RolUsuario rolUsuario)
+        public override void Remove(RolUsuario entity)
         {
-            try
-            {
-                RolUsuario rolUsuarioToRemove = GetRolUsuarioById(rolUsuario.idRolUsuario);
-                _context.RolUsuarios.Remove(rolUsuarioToRemove);
-                _context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
+            RolUsuario RolToRemove = GetEntity(entity.idRolUsuario);
 
-                throw ex;
-            }
+            RolToRemove.Estado = true;
+
+            this.context.RolUsuario.Update(RolToRemove);
+            this.context.SaveChanges();
         }
 
-        public void update(RolUsuario rolUsuario)
-        {
-            try
-            {
-                RolUsuario rolUsuarioToUpdate = GetRolUsuarioById(rolUsuario.idRolUsuario);
-
-                rolUsuarioToUpdate.Descipcion = rolUsuario.Descipcion;
-
-                _context.RolUsuarios.Update(rolUsuarioToUpdate);
-                _context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
     }
 }

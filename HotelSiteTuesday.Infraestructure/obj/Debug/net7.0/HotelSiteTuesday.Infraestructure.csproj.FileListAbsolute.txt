@@ -1,0 +1,15 @@
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\bin\Debug\net7.0\HotelSiteTuesday.Infraestructure.deps.json
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\bin\Debug\net7.0\HotelSiteTuesday.Infraestructure.dll
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\bin\Debug\net7.0\HotelSiteTuesday.Infraestructure.pdb
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\bin\Debug\net7.0\HotelSiteTuesday.Domain.dll
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\bin\Debug\net7.0\HotelSiteTuesday.Domain.pdb
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.csproj.AssemblyReference.cache
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.AssemblyInfoInputs.cache
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.AssemblyInfo.cs
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.csproj.CoreCompileInputs.cache
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.csproj.CopyComplete
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.dll
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\refint\HotelSiteTuesday.Infraestructure.dll
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.pdb
+C:\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\ref\HotelSiteTuesday.Infraestructure.dll

@@ -1,4 +1,6 @@
 ﻿using HotelSiteTuesday.Domain.Entities;
+using HotelSiteTuesday.Domain.Repository;
+using HotelSiteTuesday.Infraestructure.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +9,8 @@ using System.Threading.Tasks;
 
 namespace HotelSiteTuesday.Infraestructure.Interfaces
 {
-    public interface IUsuarioRepository
+    public interface IUsuarioRepository : IBaseRepository<Usuario>
     {
-        void create(Usuario Usuario);
-        void update(Usuario Usuario);
-        void remove(Usuario Usuario);
-
-        List<Usuario> GetUsuarios();
-
-        Usuario GetUsuarioById(int IdUsuario);
+        List<UsuarioModel> GetUsuarioByRolUsuario(int idRolUsuario);
     }
 }

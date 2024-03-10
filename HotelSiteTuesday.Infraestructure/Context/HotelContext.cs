@@ -15,7 +15,7 @@ namespace HotelSiteTuesday.Infraestructure.Context
         
         }
 
-        public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<RolUsuario> RolUsuarios { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<RolUsuario> RolUsuario { get; set; }
     }
 }

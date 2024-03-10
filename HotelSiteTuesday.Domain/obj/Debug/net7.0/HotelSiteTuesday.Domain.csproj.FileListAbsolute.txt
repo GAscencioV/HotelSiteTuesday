@@ -1,0 +1,11 @@
+C:\HotelSiteTuesday\HotelSiteTuesday.Domain\bin\Debug\net7.0\HotelSiteTuesday.Domain.deps.json
+C:\HotelSiteTuesday\HotelSiteTuesday.Domain\bin\Debug\net7.0\HotelSiteTuesday.Domain.dll
+C:\HotelSiteTuesday\HotelSiteTuesday.Domain\bin\Debug\net7.0\HotelSiteTuesday.Domain.pdb
+C:\HotelSiteTuesday\HotelSiteTuesday.Domain\obj\Debug\net7.0\HotelSiteTuesday.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\HotelSiteTuesday\HotelSiteTuesday.Domain\obj\Debug\net7.0\HotelSiteTuesday.Domain.AssemblyInfoInputs.cache
+C:\HotelSiteTuesday\HotelSiteTuesday.Domain\obj\Debug\net7.0\HotelSiteTuesday.Domain.AssemblyInfo.cs
+C:\HotelSiteTuesday\HotelSiteTuesday.Domain\obj\Debug\net7.0\HotelSiteTuesday.Domain.csproj.CoreCompileInputs.cache
+C:\HotelSiteTuesday\HotelSiteTuesday.Domain\obj\Debug\net7.0\HotelSiteTuesday.Domain.dll
+C:\HotelSiteTuesday\HotelSiteTuesday.Domain\obj\Debug\net7.0\refint\HotelSiteTuesday.Domain.dll
+C:\HotelSiteTuesday\HotelSiteTuesday.Domain\obj\Debug\net7.0\HotelSiteTuesday.Domain.pdb
+C:\HotelSiteTuesday\HotelSiteTuesday.Domain\obj\Debug\net7.0\ref\HotelSiteTuesday.Domain.dll
