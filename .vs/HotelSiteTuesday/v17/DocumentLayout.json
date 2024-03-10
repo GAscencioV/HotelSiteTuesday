@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{98DF443D-9EF6-4FFA-BA78-D5F5F5FC3FF2}|HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DF443D-9EF6-4FFA-BA78-D5F5F5FC3FF2}|HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj|solutionrelative:hotelsitetuesday.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Categoria.cs",
+              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\Entities\\Categoria.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Domain\\Entities\\Categoria.cs",
+              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\Entities\\Categoria.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Domain\\Entities\\Categoria.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T20:46:58.902Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

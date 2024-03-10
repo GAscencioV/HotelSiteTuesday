@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "j72mU9xxFsZjW+YufmCIe/hiEzv2aFo1aQkuV9vWGwVRn6rT6HAr4+/36xjg/vO1uFhVR0py8LXyHqS3iALZIg==",
+  "dgSpecHash": "eEaCygceZrM7NHr6rQlmyn2MSWIIPqdtajUBjC6AQStaRJB47FFTT2KtzuKpOo91g4bTk1EBu5kjzOAQXdErWw==",
   "success": true,
-  "projectFilePath": "C:\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dell\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\dell\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\dell\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
+  ],
   "logs": []
 }
