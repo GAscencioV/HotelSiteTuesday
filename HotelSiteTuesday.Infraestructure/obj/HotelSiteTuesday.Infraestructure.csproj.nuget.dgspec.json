@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj": {}
+    "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj": {
+    "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj",
+        "projectUniqueName": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj",
         "projectName": "HotelSiteTuesday.Infraestructure",
-        "projectPath": "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj",
+        "projectPath": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj",
         "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\obj\\",
+        "outputPath": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

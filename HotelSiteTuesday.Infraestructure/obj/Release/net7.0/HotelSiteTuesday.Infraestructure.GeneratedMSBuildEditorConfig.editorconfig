@@ -8,4 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HotelSiteTuesday.Infraestructure
-build_property.ProjectDir = C:\Users\DELL\Desktop\ITLA\4to Cuatrimestre\Prog II\Proyecto Final\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\
+build_property.ProjectDir = C:\Users\dell\source\repos\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

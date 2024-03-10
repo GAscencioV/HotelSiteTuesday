@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pZDKdc20ABSqqDf97N+WchFRgqz0NveQJ4/2DmRZvmiIXR3/NhQUg8nz4z00L/FoUuCg6HNfWDju4LuKH63i7A==",
+  "dgSpecHash": "Nt/6W0wn3AdSu3+SoS9de7TwE82DNWt/MgQ4qY9LbkeO+1dgURSFhDO7WXgvmBcXeBpQxxrvJjArZLRspSJD/Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.IOC\\HotelSiteTuesday.IOC.csproj",
+  "projectFilePath": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.IOC\\HotelSiteTuesday.IOC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dell\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
     "C:\\Users\\dell\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",

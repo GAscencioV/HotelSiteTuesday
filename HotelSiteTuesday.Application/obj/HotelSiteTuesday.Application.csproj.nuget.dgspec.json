@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj": {}
+    "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj": {
+    "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj",
+        "projectUniqueName": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj",
         "projectName": "HotelSiteTuesday.Application",
-        "projectPath": "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj",
+        "projectPath": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj",
         "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Application\\obj\\",
         "projectStyle": "PackageReference",

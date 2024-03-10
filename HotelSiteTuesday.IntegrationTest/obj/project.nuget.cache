@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "239uA63X2khKLy80JKnd34FEjRFWUF6NR5jYhstR87VrgI4OpGavrAUq4HHhDCnGqHVKkJheAQMK2KR3XNP+Hw==",
+  "dgSpecHash": "jBv5/3Talcmb6DXI3u5yeZYkdQlqkxED84Wy8XrTMxM1QfAOVNoaBxlkZOTY3JSUfc1wA8qptLdR7q6NKX50NA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.IntegrationTest\\HotelSiteTuesday.IntegrationTest.csproj",
+  "projectFilePath": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.IntegrationTest\\HotelSiteTuesday.IntegrationTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dell\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\dell\\.nuget\\packages\\microsoft.codecoverage\\17.7.1\\microsoft.codecoverage.17.7.1.nupkg.sha512",

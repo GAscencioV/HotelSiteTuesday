@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Api\\HotelSiteTuesday.Api.csproj": {}
+    "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Api\\HotelSiteTuesday.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Api\\HotelSiteTuesday.Api.csproj": {
+    "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Api\\HotelSiteTuesday.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Api\\HotelSiteTuesday.Api.csproj",
+        "projectUniqueName": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Api\\HotelSiteTuesday.Api.csproj",
         "projectName": "HotelSiteTuesday.Api",
-        "projectPath": "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Api\\HotelSiteTuesday.Api.csproj",
+        "projectPath": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Api\\HotelSiteTuesday.Api.csproj",
         "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dell\\Source\\Repos\\HotelSiteTuesday\\HotelSiteTuesday.Api\\obj\\",
+        "outputPath": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
