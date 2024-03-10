@@ -1,6 +1,7 @@
 ﻿using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Context;
 using HotelSiteTuesday.Infraestructure.Core;
+using HotelSiteTuesday.Infraestructure.Exceptions;
 using HotelSiteTuesday.Infraestructure.Interfaces;
 using HotelSiteTuesday.Infraestructure.Models;
 using Microsoft.EntityFrameworkCore;
@@ -63,7 +64,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             try
             {
                 if (context.Usuario.Any(us => us.Correo == entity.Correo))
-                    throw new Exception("Este correo ya existe");
+                    throw new UsuarioException("Este correo ya existe");
 
                 this.context.Usuario.Add(entity);
                 this.context.SaveChanges();
