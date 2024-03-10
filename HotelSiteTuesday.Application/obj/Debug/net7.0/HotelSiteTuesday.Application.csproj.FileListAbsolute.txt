@@ -1,0 +1,12 @@
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\bin\Debug\net7.0\HotelSiteTuesday.Application.deps.json
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\bin\Debug\net7.0\HotelSiteTuesday.Application.dll
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\bin\Debug\net7.0\HotelSiteTuesday.Application.pdb
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\HotelSiteTuesday.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\HotelSiteTuesday.Application.AssemblyInfoInputs.cache
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\HotelSiteTuesday.Application.AssemblyInfo.cs
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\HotelSiteTuesday.Application.csproj.CoreCompileInputs.cache
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\HotelSiteTuesday.Application.sourcelink.json
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\HotelSiteTuesday.Application.dll
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\refint\HotelSiteTuesday.Application.dll
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\HotelSiteTuesday.Application.pdb
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\ref\HotelSiteTuesday.Application.dll

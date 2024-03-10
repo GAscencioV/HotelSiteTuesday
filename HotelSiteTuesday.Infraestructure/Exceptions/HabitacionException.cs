@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace HotelSiteTuesday.Infraestructure.Exceptions
 {
-    internal class HabitacionException
+    public class HabitacionException : Exception
     {
+        public HabitacionException(String Message) : base(Message) 
+        {
+            SaveLog(Message);
+        }
+
+        private void SaveLog(string message)
+        {
+
+        }
     }
 }

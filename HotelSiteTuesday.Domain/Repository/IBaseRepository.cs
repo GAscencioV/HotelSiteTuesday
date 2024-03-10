@@ -8,12 +8,16 @@ namespace HotelSiteTuesday.Domain.Repository
 {
     public interface IBaseRepository<TEntity> where TEntity : class
     {
-        /*
-        void Save();
-        void Update();
-        void Remove();
-        List<TEntity> GetEntities();
         TEntity GetEntity(int id);
-         */
+        List<TEntity> GetEntities();
+
+        List<TEntity> FindAll(Func<TEntity, bool> filter);
+        bool Exists(Func<TEntity, bool> filter);
+
+        void Save(TEntity entity);
+
+        void Update(TEntity entity);
+
+        void Remove(TEntity entity);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using HotelSiteTuesday.Domain.Entities;
+using HotelSiteTuesday.Domain.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,8 @@ using System.Threading.Tasks;
 
 namespace HotelSiteTuesday.Infraestructure.Interfaces
 {
-    public interface IEstadoHabitacionRepository
+    public interface IEstadoHabitacionRepository : IBaseRepository<EstadoHabitacion>
     {
-        void Create(EstadoHabitacion estadoHabitacion);
-        void Update(EstadoHabitacion estadoHabitacion);
-        void Remove(EstadoHabitacion estadoHabitacion);
-        List<EstadoHabitacion> GetEstadoHabitaciones();
 
-        Habitacion GetEstadoHabitaciones(int IdHabitacion);
     }
 }
