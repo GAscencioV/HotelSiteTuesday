@@ -14,7 +14,5 @@ namespace HotelSiteTuesday.Infraestructure.Interfaces
         List<HabitacionModels> GetHabitacionByEstadoHabitacion (int IdEstadoHabitacion);
         List<HabitacionModels> GetHabitacionByPiso(int IdPiso);
         List<HabitacionModels> GetHabitacionByCategoria(int IdCategoria);
-
-
     }
 }

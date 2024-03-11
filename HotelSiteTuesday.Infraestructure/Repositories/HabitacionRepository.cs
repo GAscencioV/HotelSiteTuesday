@@ -20,6 +20,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
 
         public HabitacionRepository(HotelContext context, ILogger<HabitacionRepository> logger) : base (context)
         {
+            this.context = context;
             this.logger = logger;
         }
 

@@ -10,7 +10,10 @@ namespace HotelSiteTuesday.Infraestructure.Context
 {
     public class HotelContext : DbContext
     {
-        public HotelContext(DbContextOptions<HotelContext> options) { }
+        public HotelContext(DbContextOptions<HotelContext> options) : base (options) 
+        {
+
+        }
 
         #region "DbSets"
         public DbSet<Habitacion> Habitacion { get; set; }
