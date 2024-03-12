@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\HotelSiteTuesday.Domain",
-    "\\HotelSiteTuesday.Domain\\Core",
-    "\\HotelSiteTuesday.Domain\\Entities",
-    "\\HotelSiteTuesday.Infraestructure"
+    ""
   ],
-  "SelectedNode": "\\HotelSiteTuesday.Domain\\Entities\\Clientes.cs",
+  "SelectedNode": "\\HotelSiteTuesday.sln",
   "PreviewInSolutionExplorer": false
 }

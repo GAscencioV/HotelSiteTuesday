@@ -3,12 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\Entities\\Clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HotelSiteTuesday.Domain\\Entities\\Clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.infraestructure\\interfaces\\icategoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|solutionrelative:hotelsitetuesday.infraestructure\\interfaces\\icategoriarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\Entities\\Categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HotelSiteTuesday.Domain\\Entities\\Categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.infraestructure\\interfaces\\iclientesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|solutionrelative:hotelsitetuesday.infraestructure\\interfaces\\iclientesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DF443D-9EF6-4FFA-BA78-D5F5F5FC3FF2}|HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.domain\\entities\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DF443D-9EF6-4FFA-BA78-D5F5F5FC3FF2}|HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj|solutionrelative:hotelsitetuesday.domain\\entities\\clientes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DF443D-9EF6-4FFA-BA78-D5F5F5FC3FF2}|HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DF443D-9EF6-4FFA-BA78-D5F5F5FC3FF2}|HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj|solutionrelative:hotelsitetuesday.domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.infraestructure\\extentions\\clientesextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|solutionrelative:hotelsitetuesday.infraestructure\\extentions\\clientesextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.infraestructure\\extentions\\categoriaexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|solutionrelative:hotelsitetuesday.infraestructure\\extentions\\categoriaexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.infraestructure\\hotelsitetuesday.infraestructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|solutionrelative:hotelsitetuesday.infraestructure\\hotelsitetuesday.infraestructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DF443D-9EF6-4FFA-BA78-D5F5F5FC3FF2}|HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.domain\\hotelsitetuesday.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{98DF443D-9EF6-4FFA-BA78-D5F5F5FC3FF2}|HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj|solutionrelative:hotelsitetuesday.domain\\hotelsitetuesday.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.infraestructure\\exeptions\\clientesexceptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|solutionrelative:hotelsitetuesday.infraestructure\\exeptions\\clientesexceptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.infraestructure\\exeptions\\categoriaexceptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|solutionrelative:hotelsitetuesday.infraestructure\\exeptions\\categoriaexceptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.infraestructure\\core\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|solutionrelative:hotelsitetuesday.infraestructure\\core\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.infraestructure\\context\\hotelcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{24F3AD20-3016-42E4-9B77-05FD2B6148BD}|HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj|solutionrelative:hotelsitetuesday.infraestructure\\context\\hotelcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98DF443D-9EF6-4FFA-BA78-D5F5F5FC3FF2}|HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj|c:\\users\\dell\\source\\repos\\hotelsitetuesday\\hotelsitetuesday.domain\\repository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98DF443D-9EF6-4FFA-BA78-D5F5F5FC3FF2}|HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj|solutionrelative:hotelsitetuesday.domain\\repository\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,36 +62,179 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ICategoriaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Interfaces\\ICategoriaRepository.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Infraestructure\\Interfaces\\ICategoriaRepository.cs",
+              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Interfaces\\ICategoriaRepository.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Infraestructure\\Interfaces\\ICategoriaRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T19:18:24.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IClientesRepository.cs",
+              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Interfaces\\IClientesRepository.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Infraestructure\\Interfaces\\IClientesRepository.cs",
+              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Interfaces\\IClientesRepository.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Infraestructure\\Interfaces\\IClientesRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T19:12:03.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CategoriaException.cs",
+              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Extentions\\CategoriaException.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Infraestructure\\Extentions\\CategoriaException.cs",
+              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Extentions\\CategoriaException.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Infraestructure\\Extentions\\CategoriaException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T02:20:12.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ClientesExtention.cs",
+              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Extentions\\ClientesExtention.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Infraestructure\\Extentions\\ClientesExtention.cs",
+              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Extentions\\ClientesExtention.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Infraestructure\\Extentions\\ClientesExtention.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T02:19:37.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Categoria.cs",
+              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\Entities\\Categoria.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Domain\\Entities\\Categoria.cs",
+              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\Entities\\Categoria.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Domain\\Entities\\Categoria.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-10T20:46:58.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Clientes.cs",
               "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\Entities\\Clientes.cs",
               "RelativeDocumentMoniker": "HotelSiteTuesday.Domain\\Entities\\Clientes.cs",
               "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\Entities\\Clientes.cs",
               "RelativeToolTip": "HotelSiteTuesday.Domain\\Entities\\Clientes.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-10T22:33:08.562Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Categoria.cs",
-              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\Entities\\Categoria.cs",
-              "RelativeDocumentMoniker": "HotelSiteTuesday.Domain\\Entities\\Categoria.cs",
-              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\Entities\\Categoria.cs",
-              "RelativeToolTip": "HotelSiteTuesday.Domain\\Entities\\Categoria.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "DocumentIndex": 7,
+              "Title": "HotelSiteTuesday.Domain",
+              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj",
+              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj",
+              "RelativeToolTip": "HotelSiteTuesday.Domain\\HotelSiteTuesday.Domain.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-12T02:17:55.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CategoriaExceptions.cs",
+              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Exeptions\\CategoriaExceptions.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Infraestructure\\Exeptions\\CategoriaExceptions.cs",
+              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Exeptions\\CategoriaExceptions.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Infraestructure\\Exeptions\\CategoriaExceptions.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAIwAoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-10T20:46:58.902Z",
+              "WhenOpened": "2024-03-12T02:13:26.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ClientesExceptions.cs",
+              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Exeptions\\ClientesExceptions.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Infraestructure\\Exeptions\\ClientesExceptions.cs",
+              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Exeptions\\ClientesExceptions.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Infraestructure\\Exeptions\\ClientesExceptions.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T02:09:04.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Core\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Infraestructure\\Core\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Core\\BaseRepository.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Infraestructure\\Core\\BaseRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-12T00:06:00.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "HotelSiteTuesday.Infraestructure.csproj",
+              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj",
+              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj",
+              "RelativeToolTip": "HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-03-11T21:07:33.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HotelContext.cs",
+              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Context\\HotelContext.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Infraestructure\\Context\\HotelContext.cs",
+              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\Context\\HotelContext.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Infraestructure\\Context\\HotelContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T21:38:18.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IBaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\Repository\\IBaseRepository.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Domain\\Repository\\IBaseRepository.cs",
+              "ToolTip": "C:\\Users\\dell\\source\\repos\\HotelSiteTuesday\\HotelSiteTuesday.Domain\\Repository\\IBaseRepository.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Domain\\Repository\\IBaseRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-11T22:22:46.471Z",
               "EditorCaption": ""
             }
           ]
