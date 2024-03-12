@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelSiteTuesday.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,13 @@ namespace HotelSiteTuesday.Infraestructure.Interfaces
 {
     public interface IClientesRepository
     {
-        void create(IClientesRepository clientesRepository);
-        void update(IClientesRepository clientesRepository);
-        void remove(IClientesRepository clientesRepository);
+        void create(Clientes cliente);
+        void remove(Clientes cliente);
+        void update(Clientes cliente);
 
-        List<IClientesRepository> GetClientesRepositories();
-        IClientesRepository GetClientesRepositoryById(int IdCliente);
+        List<Clientes> GetClientes();
+        Clientes getClientesById(int IdCliente);
+
+
     }
 } 

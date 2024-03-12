@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelSiteTuesday.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +10,14 @@ namespace HotelSiteTuesday.Infraestructure.Interfaces
     public interface ICategoriaRepository
     {
 
-        void create(ICategoriaRepository categoriaRepository);
-        void update(ICategoriaRepository categoriaRepository);
-        void remove(ICategoriaRepository categoriaRepository);
+        void create(Categoria categoria);
+
+        void update(Categoria categoria);
+        void remove (Categoria categoria);
+
+        List<Categoria> GetCategoria();
+        Categoria GetCategoriaById(int Id);
 
 
-        List<ICategoriaRepository> GetCategoriaRepositories();
-        ICategoriaRepository GetCategoriaRepositoryById(int Id);
     }
 }
