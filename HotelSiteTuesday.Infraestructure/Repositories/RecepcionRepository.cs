@@ -68,10 +68,9 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
 
         public List<RecepcionModel> GetRecepcionByCliente(int idCliente)
         {
-            List<RecepcionModel> recepcions = new List<RecepcionModel>();
+            List<RecepcionModel> recepciones = new List<RecepcionModel>();
             try
             {
-
                 var query = from recep in this.context.Recepcion
                             where recep.IdCliente == idCliente
                             select new RecepcionModel
@@ -79,18 +78,35 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
                                 idRecepcion = recep.IdRecepcion,
                                 Descripcion = $"Recepción del cliente {idCliente}",
                             };
-                recepcions = query.ToList();
+                recepciones = query.ToList();
             }
             catch (Exception ex)
             {
                 this.logger.LogError("Error en recepcion", ex.ToString());
             }
-            return recepcions;
+            return recepciones;
         }
 
         public List<RecepcionModel> GetRecepcionByHabitacion(int idHabitacion)
         {
-            throw new NotImplementedException();
+            List<RecepcionModel> recepciones = new List<RecepcionModel>();
+            try
+            {
+                var query = this.context.Recepcion
+                             .Where(recepcion => recepcion.IdHabitacion == idHabitacion)
+                             .Select(recepcion => new RecepcionModel
+                             {
+                                 idRecepcion = recepcion.IdRecepcion,
+                                 Descripcion = $"Recepción de la habitación {idHabitacion}",
+                             });
+
+                recepciones = query.ToList();
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError("Error en recepcion", ex.ToString());
+            }
+            return recepciones;
         }
     }
-  }
+}

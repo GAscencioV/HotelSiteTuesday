@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G5eLfgNJBXSKo7iiTzldUQKTYkqFPT5zRq+Y/nf8SKxdYN29YakQhnqX9PmXny0fGt2XxzkEggcVBDx1xqGQOA==",
+  "dgSpecHash": "gWAGAVLDT2wzmVxs60HYOEvp2N1fTTz7EQGEx8y4pslcHSufq56ZgRYpuqMrOOCruQ3W0D+NkfLQloKPu/r1oA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dienely Frias\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.UnitTest\\HotelSiteTuesday.UnitTest.csproj",
+  "projectFilePath": "C:\\Users\\Dienely Frias\\Desktop\\Itla\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.UnitTest\\HotelSiteTuesday.UnitTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dienely Frias\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.codecoverage\\17.7.1\\microsoft.codecoverage.17.7.1.nupkg.sha512",
@@ -93,9 +93,9 @@
     "C:\\Users\\Dienely Frias\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512",
     "C:\\Users\\Dienely Frias\\.nuget\\packages\\xunit.extensibility.execution\\2.4.2\\xunit.extensibility.execution.2.4.2.nupkg.sha512",
     "C:\\Users\\Dienely Frias\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512",
-    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512"
+    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512"
   ],
   "logs": []
 }

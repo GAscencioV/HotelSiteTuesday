@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7gPEGdYdVwRKhL2i+fXf4K4YXMeFIvPwYLfmAIhAykVNPU4fhGdTFECOgoWHpIAUO6YRU6SS5NojmvHGwIC4cw==",
+  "dgSpecHash": "WRUy92Z7+GDoolJsMBllJCSjN94SiShLKroXGz5gN/RWuvSjrKklij2yvxbNBqhxcVC4Pyl35/NyGe+Hb8Q28w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dienely Frias\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj",
+  "projectFilePath": "C:\\Users\\Dienely Frias\\Desktop\\Itla\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dienely Frias\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Dienely Frias\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
@@ -65,9 +65,9 @@
     "C:\\Users\\Dienely Frias\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\Dienely Frias\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Dienely Frias\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
-    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512"
+    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512"
   ],
   "logs": []
 }

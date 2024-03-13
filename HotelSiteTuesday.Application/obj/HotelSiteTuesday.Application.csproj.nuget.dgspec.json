@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dienely Frias\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj": {}
+    "C:\\Users\\Dienely Frias\\Desktop\\Itla\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dienely Frias\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj": {
+    "C:\\Users\\Dienely Frias\\Desktop\\Itla\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dienely Frias\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Dienely Frias\\Desktop\\Itla\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj",
         "projectName": "HotelSiteTuesday.Application",
-        "projectPath": "C:\\Users\\Dienely Frias\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj",
+        "projectPath": "C:\\Users\\Dienely Frias\\Desktop\\Itla\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj",
         "packagesPath": "C:\\Users\\Dienely Frias\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dienely Frias\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Application\\obj\\",
+        "outputPath": "C:\\Users\\Dienely Frias\\Desktop\\Itla\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dienely Frias\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -53,15 +58,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
+              "version": "[7.0.17, 7.0.17]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
+              "version": "[7.0.17, 7.0.17]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.15, 7.0.15]"
+              "version": "[7.0.17, 7.0.17]"
             }
           ],
           "frameworkReferences": {
@@ -69,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

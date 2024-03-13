@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ttBsIrr1H+vxeOg3q9h9pyOAR7acJTzdkwQ8Dv92GLg99/UF6W16xJLqQ30Rm5V/R3DC6k1EAktpeYicHsHA7g==",
+  "dgSpecHash": "MWDp4hZlQePesvm3yt4xga6e8/DJCOYbiY+c14Nm+UDiaffZF4ozBy2cwf40WPqLADsa0zlj9Xgey5IdZy0+/g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dienely Frias\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Web\\HotelSiteTuesday.Web.csproj",
+  "projectFilePath": "C:\\Users\\Dienely Frias\\Desktop\\Itla\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Web\\HotelSiteTuesday.Web.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512",
-    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.15\\microsoft.netcore.app.host.win-x64.7.0.15.nupkg.sha512"
+    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\Dienely Frias\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.17\\microsoft.netcore.app.host.win-x64.7.0.17.nupkg.sha512"
   ],
   "logs": []
 }
