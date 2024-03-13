@@ -25,6 +25,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             this.logger = logger;
         }
 
+   
         public override List<Recepcion> GetEntities()
         {
             return base.GetEntities();
@@ -67,8 +68,24 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
 
         public List<RecepcionModel> GetRecepcionByCliente(int idCliente)
         {
-           
-          
+            List<RecepcionModel> recepcions = new List<RecepcionModel>();
+            try
+            {
+
+                var query = from recep in this.context.Recepcion
+                            where recep.IdCliente == idCliente
+                            select new RecepcionModel
+                            {
+                                idRecepcion = recep.IdRecepcion,
+                                Descripcion = $"Recepción del cliente {idCliente}",
+                            };
+                recepcions = query.ToList();
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError("Error en recepcion", ex.ToString());
+            }
+            return recepcions;
         }
 
         public List<RecepcionModel> GetRecepcionByHabitacion(int idHabitacion)
