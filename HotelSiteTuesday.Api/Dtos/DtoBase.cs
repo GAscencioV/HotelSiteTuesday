@@ -1,8 +1,7 @@
-﻿namespace HotelSiteTuesday.Api.Models
+﻿namespace HotelSiteTuesday.Api.Dtos
 {
-    public class HabitacionAddModel
+    public class DtoBase
     {
-        public int IdHabitacion { get; set; }
         public string? Numero { get; set; }
         public string? Detalle { get; set; }
         public decimal? Precio { get; set; }

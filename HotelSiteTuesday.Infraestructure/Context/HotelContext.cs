@@ -18,6 +18,8 @@ namespace HotelSiteTuesday.Infraestructure.Context
         #region "DbSets"
         public DbSet<Habitacion> Habitacion { get; set; }
         public DbSet<EstadoHabitacion> EstadoHabitacion { get; set; }
+        public DbSet<Piso> Piso { get; set; }
+        public DbSet<Categoria> Categoria { get; set; }
         #endregion
     }
 }

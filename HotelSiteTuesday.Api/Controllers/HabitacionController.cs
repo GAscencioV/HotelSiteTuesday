@@ -1,8 +1,9 @@
-﻿using HotelSiteTuesday.Api.Models;
+﻿using HotelSiteTuesday.Api.Dtos.Habitacion;
+using HotelSiteTuesday.Api.Models;
+using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace HotelSiteTuesday.Api.Controllers
 {
@@ -20,25 +21,50 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpGet("GetHabitacion")]
         public IActionResult Get()
         {
-            var habitacion = this.habitacionRepository.GetEntities().Select(cd => new HabitacionAddModel()
+            var habitacion = this.habitacionRepository.GetEntities().Select(cd => new HabitacionGetModel()
+
             {
                 IdHabitacion = cd.IdHabitacion,
                 Numero = cd.Numero,
                 Detalle = cd.Detalle,
                 Precio = cd.Precio,
+                IdEstadoHabitacion = cd.IdEstadoHabitacion,
+                IdPiso = cd.IdPiso,
+                IdCategoria = cd.IdCategoria,
             });
+
             return Ok(habitacion);
         }
 
+        //I need to keep looking for a better way to filter those requests. 
         [HttpGet("GetHabitacionByEstadoHabitacion")]
-        public IActionResult Get(int IdEstadoHabitacion) 
+        public IActionResult GetHabitacionByEstadoHabitacion(int IdEstadoHabitacion) 
         {
-            var habitacionbyEstado = this.habitacionRepository.GetEntity(IdEstadoHabitacion);
+            var habitacionbyEstado = this.habitacionRepository.GetHabitacionByEstadoHabitacion(IdEstadoHabitacion);
+
             return Ok(habitacionbyEstado);
         }
 
+        [HttpGet("GetHabitacionByPiso")]
+        public IActionResult GetHabitacionByPiso(int IdPiso)
+        {
+            var habitacionbyPiso = this.habitacionRepository.GetHabitacionByPiso(IdPiso);
+
+            return Ok(habitacionbyPiso);
+        }
+
+
+        [HttpGet("GetHabitacionByCategoria")]
+        public IActionResult GetByCategoria(int IdCategoria)
+        {
+            var habitacionbyHabitacion = this.habitacionRepository.GetHabitacionByCategoria(IdCategoria);
+
+            return Ok(habitacionbyHabitacion);
+        }
+
+
         [HttpPost("SaveHabitacion")]
-        public void Post([FromBody] HabitacionAddModel habitacionAddModel)
+        public IActionResult Post([FromBody] HabitacionAddDto habitacionAddModel)
         {
             this.habitacionRepository.Save(new Domain.Entities.Habitacion() 
             {
@@ -46,18 +72,33 @@ namespace HotelSiteTuesday.Api.Controllers
                 Detalle = habitacionAddModel.Detalle,
                 Precio = habitacionAddModel.Precio,
             });
+
+            return Ok("Habitacion guardada correctamente.");
         }
 
-        // PUT api/<HabitacionController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost("UpdateHabitacion")]
+        public IActionResult Put([FromBody] HabitacionUpdateDto habitacionUpdate)
         {
+            this.habitacionRepository.Update(new Habitacion() 
+            {
+                IdHabitacion = habitacionUpdate.IdHabitacion,
+                Numero = habitacionUpdate.Numero,
+                Detalle = habitacionUpdate.Detalle,
+                Precio = habitacionUpdate.Precio,
+            });
+
+            return Ok("Habitacion actualizada correctamente.");
         }
 
-        // DELETE api/<HabitacionController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("RemoveHabitacion")]
+        public IActionResult Remove([FromBody] HabitacionRemoveDto habitacionRemove)
         {
+            this.habitacionRepository.Remove(new Habitacion()
+            {
+                IdHabitacion = habitacionRemove.IdHabitacion,
+            });
+
+            return Ok("Habitacion eliminada correctamente.");
         }
     }
 }

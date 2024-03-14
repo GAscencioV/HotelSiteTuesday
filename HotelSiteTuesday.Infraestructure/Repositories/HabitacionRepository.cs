@@ -35,6 +35,9 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             {
                 var HabitacionToUpdate = this.GetEntity(entity.IdHabitacion);
 
+                if (HabitacionToUpdate is null)
+                    throw new HabitacionException("La habitacion no existe.");
+
                 HabitacionToUpdate.Numero = entity.Numero;
                 HabitacionToUpdate.Detalle = entity.Detalle;
                 HabitacionToUpdate.Precio = entity.Precio;
@@ -50,6 +53,29 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             catch (Exception ex)
             {
                 this.logger.LogError("Error actualizando la habitacion", ex.ToString());   
+            }
+        }
+
+        public override void Remove(Habitacion entity)
+        {
+            try
+            {
+                Habitacion habitacionToRemove = this.GetEntity(entity.IdHabitacion);
+
+                if (habitacionToRemove is null)
+                    throw new HabitacionException("No se encuentra la categoria.");
+
+                else
+                {
+                    habitacionToRemove.IdHabitacion = entity.IdHabitacion;
+
+                    this.context.Habitacion.Remove(habitacionToRemove);
+                    this.context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.LogError("Error al eliminar la habitación", ex.ToString());
             }
         }
 
@@ -104,12 +130,63 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
         //It's necessary to create a model of Piso and Categoria to implement those methods
         public List<HabitacionModels> GetHabitacionByPiso(int IdPiso)
         {
-            throw new NotImplementedException();
+            List<HabitacionModels> habitacion = new List<HabitacionModels> ();
+
+            try
+            {
+                habitacion = (from ha in this.context.Habitacion
+                              join p in this.context.Piso on ha.IdPiso equals p.IdPiso
+                              where ha.IdPiso == IdPiso
+                              select new HabitacionModels()
+                              {
+                                  IdPiso = p.IdPiso,
+                                  Descripcion = p.Descripcion,
+                                  Numero = ha.Numero,
+                                  Detalle = ha.Detalle,
+                                  Precio = ha.Precio,
+                                  IdCategoria = ha.IdCategoria,
+
+                              }).ToList();
+
+                return habitacion;
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError("Error obteniendo las habitaciones por piso", ex.ToString());
+            }
+
+            return habitacion;
         }
 
         public List<HabitacionModels> GetHabitacionByCategoria(int IdCategoria)
         {
-            throw new NotImplementedException();
+            List<HabitacionModels> habitacion = new List<HabitacionModels>();
+
+            try
+            {
+                habitacion = (from ha in this.context.Habitacion
+                              join ca in this.context.Categoria on ha.IdCategoria equals ca.IdCategoria
+                              where ha.IdCategoria == IdCategoria
+                              select new HabitacionModels()
+                              {
+                                  IdCategoria = ca.IdCategoria,
+                                  Descripcion = ca.Descripcion,
+                                  Numero = ha.Numero,
+                                  Detalle = ha.Detalle,
+                                  Precio = ha.Precio,
+                                  IdPiso = ha.IdPiso,
+                                  IdEstadoHabitacion = ha.IdEstadoHabitacion,
+
+                              }).ToList();
+
+                return habitacion;
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError("Error obteniendo las habitaciones por categoria", ex.ToString());
+            }
+
+            return habitacion;
         }
     }
 }

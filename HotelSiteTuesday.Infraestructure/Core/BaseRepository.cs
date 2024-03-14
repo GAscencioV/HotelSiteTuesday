@@ -41,7 +41,7 @@ namespace HotelSiteTuesday.Infraestructure.Core
             return DBEntity.Find(id);
         }
 
-        public void Remove(TEntity entity)
+        public virtual void Remove(TEntity entity)
         {
             DBEntity.Update(entity);
             context.SaveChanges();

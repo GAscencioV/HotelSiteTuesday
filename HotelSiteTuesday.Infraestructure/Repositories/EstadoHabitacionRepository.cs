@@ -46,6 +46,29 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             }
         }
 
+        public override void Remove(EstadoHabitacion entity)
+        {
+            EstadoHabitacion estadoHabitacionToRemove = this.GetEntity(entity.IdEstadoHabitacion);
+
+            try
+            {
+                if (estadoHabitacionToRemove is null)
+                    throw new EstadoHabitacionException("No se puede eliminar el estado de habitación, se encuentra asociado a una habitación.");
+
+                else
+                {
+                    estadoHabitacionToRemove.IdEstadoHabitacion = entity.IdEstadoHabitacion;
+
+                    context.EstadoHabitacion.Remove(estadoHabitacionToRemove);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError("Error al eliminar el estado de habitación", ex.ToString());
+            }
+        }
+
         public override void Save(EstadoHabitacion entity)
         {
             try
