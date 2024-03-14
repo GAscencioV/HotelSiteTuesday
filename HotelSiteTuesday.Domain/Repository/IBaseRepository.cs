@@ -14,7 +14,7 @@ namespace HotelSiteTuesday.Domain.Repository
 
         List<TEntity> FindAll (Func<TEntity, bool> filter);
 
-        bool Exists (Func <TEntity, bool> filter);
+        bool Exists(Func<TEntity, bool> filter);
 
         void Save (TEntity entity);
 

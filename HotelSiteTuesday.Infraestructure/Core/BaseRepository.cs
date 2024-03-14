@@ -1,6 +1,7 @@
 ﻿using HotelSiteTuesday.Domain.Repository;
 using HotelSiteTuesday.Infraestructure.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,9 @@ namespace HotelSiteTuesday.Infraestructure.Core
 
         private readonly HotelContext context;
         private readonly DbSet<TEntity> DBEntity;
+        private object logger;
 
-        public BaseRepository(HotelContext context)
+        protected BaseRepository(HotelContext context)
         {
             this.context = context;
             this.DBEntity = context.Set<TEntity>();
@@ -42,24 +44,31 @@ namespace HotelSiteTuesday.Infraestructure.Core
             return DBEntity.Find(id);
         }
 
-        public void Remove(TEntity entity)
+        public virtual void Remove(TEntity entity)
         {
-            DBEntity.Update(entity);
-            this.context.SaveChanges();
+                DBEntity.Remove(entity);
+                context.SaveChanges();
+      
         }
+    
 
         public virtual void Save(TEntity entity)
         {
-            DBEntity.Update(entity);
-            this.context.SaveChanges();
+            DBEntity.Add(entity);
+            context.SaveChanges();
 
         }
 
         public virtual void Update(TEntity entity)
         {
             DBEntity.Update(entity);
-            this.context.SaveChanges();
+            context.SaveChanges();
 
+        }
+
+        void IBaseRepository<TEntity>.Remove(TEntity entity)
+        {
+            throw new NotImplementedException();
         }
     }
  }

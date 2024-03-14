@@ -8,6 +8,7 @@ using HotelSiteTuesday.Infraestructure.Interfaces;
 using HotelSiteTuesday.Infraestructure.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,10 +26,10 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             this.logger = logger;
         }
 
-   
+
         public override List<Recepcion> GetEntities()
         {
-            return base.GetEntities();
+            return base.GetEntities().Where(ca => !(bool)ca.Estado).ToList();
         }
 
         public override void Update (Recepcion entity)
@@ -37,17 +38,53 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             {
                 var recepcionToUpdate = this.GetEntity(entity.IdRecepcion);
 
-                recepcionToUpdate.FechaEntrada = entity.FechaEntrada;
-                recepcionToUpdate.FechaSalida = entity.FechaSalida;
-                context.Recepcion.Add(entity);
-                context.SaveChanges();
+                if (recepcionToUpdate is null)
+                {
+                    throw new RecepcionException("La Recepcion no existe.");
 
-                this.context.Recepcion.Update(recepcionToUpdate);
+                    recepcionToUpdate.IdRecepcion = entity.IdRecepcion;
+                    recepcionToUpdate.IdCliente = entity.IdCliente;
+                    recepcionToUpdate.IdHabitacion = entity.IdHabitacion;
+                    recepcionToUpdate.Nombre = entity.Nombre;
+                    recepcionToUpdate.FechaEntrada = entity.FechaEntrada;
+                    recepcionToUpdate.FechaSalida = entity.FechaSalida;
+                    recepcionToUpdate.FechaSalidaConfirmacion = entity.FechaSalidaConfirmacion;
+                    recepcionToUpdate.PrecioInicial = entity.PrecioInicial;
+                    recepcionToUpdate.Adelanto = entity.Adelanto;
+                    recepcionToUpdate.PrecioRestante = entity.PrecioRestante;
+                    recepcionToUpdate.Observacion = entity.Observacion;
+
+                    this.context.Recepcion.Update(recepcionToUpdate);
+                    this.context.SaveChanges();
+                }
             }
             catch (Exception ex)
             {
                 this.logger.LogError("Error actulizando la Recepcion", ex.ToString());
             } 
+        }
+
+        public override void Remove(Recepcion entity)
+        {
+            try
+            {
+                Recepcion recepcionToRemove = this.GetEntity(entity.IdRecepcion);
+
+                if (recepcionToRemove is null)
+                    throw new RecepcionException("No se encuentra la categoria.");
+
+                else
+                {
+                    recepcionToRemove.IdRecepcion = entity.IdRecepcion;
+                    this.context.Recepcion.Remove(recepcionToRemove);
+                    this.context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.LogError("Error al eliminar la recepcion", ex.ToString());
+            
+            }
         }
 
         public override void Save(Recepcion entity)
@@ -62,7 +99,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError("Error creando la categoria", ex.ToString());
+                this.logger.LogError("Error guardando el campo", ex.ToString());
             }
         }
 
@@ -71,14 +108,13 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             List<RecepcionModel> recepciones = new List<RecepcionModel>();
             try
             {
-                var query = from recep in this.context.Recepcion
-                            where recep.IdCliente == idCliente
-                            select new RecepcionModel
-                            {
-                                idRecepcion = recep.IdRecepcion,
-                                Descripcion = $"Recepción del cliente {idCliente}",
-                            };
-                recepciones = query.ToList();
+                recepciones = (from recepcion in this.context.Recepcion
+                               where recepcion.IdCliente == idCliente
+                               select new RecepcionModel
+                               {
+                                   IdRecepcion = recepcion.IdRecepcion,
+                                   Descripcion = $"Recepción del cliente {recepcion.Nombre}", 
+                               }).ToList();
             }
             catch (Exception ex)
             {
@@ -89,6 +125,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
 
         public List<RecepcionModel> GetRecepcionByHabitacion(int idHabitacion)
         {
+    
             List<RecepcionModel> recepciones = new List<RecepcionModel>();
             try
             {
@@ -96,7 +133,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
                              .Where(recepcion => recepcion.IdHabitacion == idHabitacion)
                              .Select(recepcion => new RecepcionModel
                              {
-                                 idRecepcion = recepcion.IdRecepcion,
+                                 IdRecepcion = recepcion.IdRecepcion,
                                  Descripcion = $"Recepción de la habitación {idHabitacion}",
                              });
 
@@ -109,4 +146,6 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             return recepciones;
         }
     }
+
 }
+

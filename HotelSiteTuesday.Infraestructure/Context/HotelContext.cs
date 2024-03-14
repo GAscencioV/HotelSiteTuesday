@@ -15,7 +15,12 @@ namespace HotelSiteTuesday.Infraestructure.Context
 
         }
 
+        #region "DbSets"
         public DbSet <Recepcion> Recepcion {get; set;}
-    
+        public object cliente { get; internal set; }
+
+
+        #endregion
+
     }
 }
