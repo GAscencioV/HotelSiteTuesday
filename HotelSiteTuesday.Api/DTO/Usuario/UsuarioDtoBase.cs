@@ -1,8 +1,7 @@
-﻿namespace HotelSiteTuesday.Api.Models
+﻿namespace HotelSiteTuesday.Api.DTO.Usuario
 {
-    public class UsuarioAddModel
+    public class UsuarioDtoBase : BaseDto
     {
-        public int usuarioID { get; set; }
         public string? nombreCompleto { get; set; }
         public string? correo { get; set; }
         public string? clave { get; set; }

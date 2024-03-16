@@ -36,6 +36,9 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             {
                 Usuario usuarioToUpdate = GetEntity(entity.IdUsuario);
 
+                if (usuarioToUpdate is null)
+                    throw new UsuarioException("El Usuario No Existe");
+
                 usuarioToUpdate.IdRolUsuario = entity.IdRolUsuario;
                 usuarioToUpdate.NombreCompleto = entity.NombreCompleto;
                 usuarioToUpdate.Clave = entity.Clave;
@@ -51,12 +54,22 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
         }
         public override void Remove(Usuario entity)
         {
-            Usuario usuarioToRemove = GetEntity(entity.IdUsuario);
+            try
+            {
+                Usuario usuarioToRemove = GetEntity(entity.IdUsuario);
 
-            usuarioToRemove.Estado = true;
+                if (usuarioToRemove is null)
+                    throw new UsuarioException("El Usuario No Existe");
 
-            this.context.Usuario.Update(usuarioToRemove);
-            this.context.SaveChanges();
+                usuarioToRemove.Estado = true;
+
+                this.context.Usuario.Update(usuarioToRemove);
+                this.context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError("Error Eliminando el usuario.", ex.ToString());
+            }
         }
 
         public override void Save(Usuario entity)
@@ -66,7 +79,9 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
                 if (context.Usuario.Any(us => us.Correo == entity.Correo))
                     throw new UsuarioException("Este correo ya existe");
 
-                this.context.Usuario.Add(entity);
+
+
+                this.context.Usuario.Update(entity);
                 this.context.SaveChanges();
             }
             catch (Exception ex)

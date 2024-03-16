@@ -1,4 +1,6 @@
-﻿using HotelSiteTuesday.Api.Models;
+﻿using HotelSiteTuesday.Api.DTO.RolUsuario;
+using HotelSiteTuesday.Api.Models;
+using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Interfaces;
 using HotelSiteTuesday.Infraestructure.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +23,7 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpGet("GetRolUsuario")]
         public IActionResult Get()
         {
-            var rolUsuarios = rolUsuarioRepository.GetEntities().Select(rol => new RolUsuarioAddModel()
+            var rolUsuarios = rolUsuarioRepository.GetEntities().Select(rol => new RolUsuarioGetModel()
             {
                 Descripcion = rol.Descripcion,
                 IdRolUsuario = rol.idRolUsuario
@@ -39,25 +41,37 @@ namespace HotelSiteTuesday.Api.Controllers
 
         // POST api/<RolUsuarioController>
         [HttpPost("SaveRolUsuario")]
-        public void Post([FromBody] RolUsuarioAddModel rolUsuarioAddModel)
+        public IActionResult Post([FromBody] RolUsuarioGetModel rolUsuarioAddModel)
         {
-            this.rolUsuarioRepository.Save(new Domain.Entities.RolUsuario()
+            this.rolUsuarioRepository.Save(new RolUsuario()
             {
                 idRolUsuario = rolUsuarioAddModel.IdRolUsuario,
                 Descripcion = rolUsuarioAddModel.Descripcion
             });
+            return Ok("Rol Usuario Guardado Correctamente");
         }
 
         // PUT api/<RolUsuarioController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost("UpdateRolUsuario")]
+        public IActionResult Put([FromBody] RolUsuarioUpdateDto rolUsuarioUpdate)
         {
+            this.rolUsuarioRepository.Update(new RolUsuario() 
+            {
+                idRolUsuario = rolUsuarioUpdate.id,
+                Descripcion = rolUsuarioUpdate.Descripcion
+            });
+            return Ok("Rol Usuario Actualizado Correctamente");
         }
 
         // DELETE api/<RolUsuarioController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpPost("RemoveUsuario")]
+        public IActionResult Delete([FromBody] RolUsuarioRemoveDto rolUsuarioRemove)
         {
+            this.rolUsuarioRepository.Remove(new RolUsuario()
+            {
+                idRolUsuario = rolUsuarioRemove.id
+            });
+            return Ok("Rol Usuario Eliminado Correctamente");
         }
     }
 }

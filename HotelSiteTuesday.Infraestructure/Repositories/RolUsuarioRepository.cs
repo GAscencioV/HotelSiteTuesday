@@ -1,6 +1,7 @@
 ﻿using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Context;
 using HotelSiteTuesday.Infraestructure.Core;
+using HotelSiteTuesday.Infraestructure.Exceptions;
 using HotelSiteTuesday.Infraestructure.Interfaces;
 using Microsoft.Extensions.Logging;
 using System;
@@ -61,12 +62,24 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
 
         public override void Remove(RolUsuario entity)
         {
-            RolUsuario RolToRemove = GetEntity(entity.idRolUsuario);
 
-            RolToRemove.Estado = true;
+            try
+            {
+                RolUsuario RolToRemove = GetEntity(entity.idRolUsuario);
 
-            this.context.RolUsuario.Update(RolToRemove);
-            this.context.SaveChanges();
+                if (RolToRemove is null)
+                    throw new RolUsuarioException("El Rol de Usuario No Existe");
+
+                RolToRemove.Estado = true;
+
+                this.context.RolUsuario.Update(RolToRemove);
+                this.context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                this.logger.LogError("Error Eliminando el Rol de Usuario.", ex.ToString());
+            }
+
         }
 
     }

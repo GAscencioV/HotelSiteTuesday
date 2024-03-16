@@ -1,4 +1,6 @@
-﻿using HotelSiteTuesday.Api.Models;
+﻿using HotelSiteTuesday.Api.DTO.Usuario;
+using HotelSiteTuesday.Api.Models;
+using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,7 +22,7 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpGet("GetUsuarios")]
         public IActionResult Get()
         {
-            var usuarios = usuarioRepository.GetEntities().Select(us => new UsuarioAddModel() 
+            var usuarios = usuarioRepository.GetEntities().Select(us => new UsuarioGetModel() 
             {
                 nombreCompleto = us.NombreCompleto,
                 clave = us.Clave,
@@ -35,34 +37,58 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpGet("GetUsuariosById")]
         public IActionResult Get(int id)
         {
-            var usuarios = usuarioRepository.GetEntity(id);
-            return Ok(usuarios);
+            var usuario = usuarioRepository.GetEntity(id);
+            
+            UsuarioGetModel usuarioGetModel = new UsuarioGetModel() 
+            {
+                usuarioID = usuario.IdUsuario,
+                nombreCompleto = usuario.NombreCompleto,
+                correo = usuario.Correo,
+                clave = usuario.Clave,
+                rolUsuarioId = usuario.IdRolUsuario
+            
+            };
+            return Ok(usuarioGetModel);
         }
 
 
         [HttpPost("SaveUsuario")]
-        public void Post([FromBody] UsuarioAddModel usuarioAddModel)
+        public IActionResult Post([FromBody] UsuarioGetModel usuarioAddModel)
         {
-            this.usuarioRepository.Save(new Domain.Entities.Usuario() 
+            this.usuarioRepository.Save(new Usuario() 
             {
-                IdUsuario = usuarioAddModel.usuarioID,
                 NombreCompleto = usuarioAddModel.nombreCompleto,
                 Correo = usuarioAddModel.correo,
                 Clave = usuarioAddModel.clave,
-                IdRolUsuario = usuarioAddModel.rolUsuarioId
+                IdRolUsuario = usuarioAddModel.rolUsuarioId,
             });
+
+            return Ok("Usuario creado correctamente.");
         }
 
         // PUT api/<UsuarioController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPost("UpdateUsuario")]
+        public IActionResult Put([FromBody] UsuarioUpdateDto usuarioUpdate)
         {
+            this.usuarioRepository.Update(new Usuario()
+            {
+                IdUsuario = usuarioUpdate.id,
+                NombreCompleto = usuarioUpdate.nombreCompleto,
+                Clave = usuarioUpdate.clave,
+                IdRolUsuario = usuarioUpdate.rolUsuarioId
+            });
+            return Ok("Usuario actualizado correctamente.");
         }
 
         // DELETE api/<UsuarioController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpPost("RemoveUsuario")]
+        public IActionResult Delete([FromBody] UsuarioRemoveDto usuarioRemove)
         {
+            this.usuarioRepository.Remove(new Usuario()
+            {
+                IdUsuario = usuarioRemove.id
+            });
+            return Ok("Usuario eliminado correctamente.");
         }
     }
 }
