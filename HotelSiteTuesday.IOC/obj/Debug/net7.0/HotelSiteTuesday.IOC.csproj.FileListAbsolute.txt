@@ -1,0 +1,12 @@
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.IOC\bin\Debug\net7.0\HotelSiteTuesday.IOC.deps.json
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.IOC\bin\Debug\net7.0\HotelSiteTuesday.IOC.dll
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.IOC\bin\Debug\net7.0\HotelSiteTuesday.IOC.pdb
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.IOC\obj\Debug\net7.0\HotelSiteTuesday.IOC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.IOC\obj\Debug\net7.0\HotelSiteTuesday.IOC.AssemblyInfoInputs.cache
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.IOC\obj\Debug\net7.0\HotelSiteTuesday.IOC.AssemblyInfo.cs
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.IOC\obj\Debug\net7.0\HotelSiteTuesday.IOC.csproj.CoreCompileInputs.cache
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.IOC\obj\Debug\net7.0\HotelSiteTuesday.IOC.sourcelink.json
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.IOC\obj\Debug\net7.0\HotelSiteTuesday.IOC.dll
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.IOC\obj\Debug\net7.0\refint\HotelSiteTuesday.IOC.dll
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.IOC\obj\Debug\net7.0\HotelSiteTuesday.IOC.pdb
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.IOC\obj\Debug\net7.0\ref\HotelSiteTuesday.IOC.dll

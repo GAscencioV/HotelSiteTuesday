@@ -1,0 +1,7 @@
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.Api\obj\Debug\net7.0\HotelSiteTuesday.Api.csproj.AssemblyReference.cache
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.Api\obj\Debug\net7.0\HotelSiteTuesday.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.Api\obj\Debug\net7.0\HotelSiteTuesday.Api.AssemblyInfoInputs.cache
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.Api\obj\Debug\net7.0\HotelSiteTuesday.Api.AssemblyInfo.cs
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.Api\obj\Debug\net7.0\HotelSiteTuesday.Api.csproj.CoreCompileInputs.cache
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.Api\obj\Debug\net7.0\HotelSiteTuesday.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.Api\obj\Debug\net7.0\HotelSiteTuesday.Api.sourcelink.json

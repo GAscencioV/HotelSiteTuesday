@@ -1,0 +1,5 @@
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.Domain\obj\Debug\net7.0\HotelSiteTuesday.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.Domain\obj\Debug\net7.0\HotelSiteTuesday.Domain.AssemblyInfoInputs.cache
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.Domain\obj\Debug\net7.0\HotelSiteTuesday.Domain.AssemblyInfo.cs
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.Domain\obj\Debug\net7.0\HotelSiteTuesday.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Pablo\Source\Repos\HotelSiteTuesday\HotelSiteTuesday.Domain\obj\Debug\net7.0\HotelSiteTuesday.Domain.sourcelink.json
