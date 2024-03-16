@@ -27,7 +27,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
         }
 
 
-        public override List<Recepcion> GetEntities()
+        public override  List<Recepcion> GetEntities()
         {
             return base.GetEntities().Where(ca => !(bool)ca.Estado).ToList();
         }
@@ -49,9 +49,14 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
                     recepcionToUpdate.FechaEntrada = entity.FechaEntrada;
                     recepcionToUpdate.FechaSalida = entity.FechaSalida;
                     recepcionToUpdate.FechaSalidaConfirmacion = entity.FechaSalidaConfirmacion;
+                    recepcionToUpdate.FechaCreacion = entity.FechaCreacion;
                     recepcionToUpdate.PrecioInicial = entity.PrecioInicial;
                     recepcionToUpdate.Adelanto = entity.Adelanto;
+                    recepcionToUpdate.CostoPenalidad = entity.CostoPenalidad;
                     recepcionToUpdate.PrecioRestante = entity.PrecioRestante;
+                    recepcionToUpdate.Descripcion = entity.Descripcion;
+                    recepcionToUpdate.TotalPagado = entity.TotalPagado;
+                    recepcionToUpdate.Estado = entity.Estado;
                     recepcionToUpdate.Observacion = entity.Observacion;
 
                     this.context.Recepcion.Update(recepcionToUpdate);
@@ -60,7 +65,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError("Error actulizando la Recepcion", ex.ToString());
+                this.logger.LogError("Error actualizando la Recepcion", ex.ToString());
             } 
         }
 

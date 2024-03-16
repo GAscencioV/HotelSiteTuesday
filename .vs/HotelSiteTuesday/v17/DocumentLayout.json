@@ -1,7 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Dienely Frias\\Desktop\\Itla\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2065F8C2-8104-47E5-AEEE-B3563079E4A7}|HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj|c:\\users\\dienely frias\\desktop\\itla\\4to cuatrimestre\\programacion 2\\hotelsitetuesday\\hotelsitetuesday.application\\services\\recepcionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2065F8C2-8104-47E5-AEEE-B3563079E4A7}|HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj|solutionrelative:hotelsitetuesday.application\\services\\recepcionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,15 +14,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RecepcionService.cs",
+              "DocumentMoniker": "C:\\Users\\Dienely Frias\\Desktop\\Itla\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Application\\Services\\RecepcionService.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Application\\Services\\RecepcionService.cs",
+              "ToolTip": "C:\\Users\\Dienely Frias\\Desktop\\Itla\\4to Cuatrimestre\\Programacion 2\\HotelSiteTuesday\\HotelSiteTuesday.Application\\Services\\RecepcionService.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Application\\Services\\RecepcionService.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAxwBIAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T01:01:39.613Z",
+              "EditorCaption": ""
             }
           ]
         }

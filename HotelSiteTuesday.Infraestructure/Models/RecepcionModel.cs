@@ -23,5 +23,7 @@ namespace HotelSiteTuesday.Infraestructure.Models
         public decimal? CostoPenalidad { get; set; }
         public string? Observacion { get; set; }
         public string Descripcion { get; internal set; }
+
+       
     }
 }

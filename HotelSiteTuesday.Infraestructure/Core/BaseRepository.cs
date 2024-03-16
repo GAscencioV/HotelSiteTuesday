@@ -15,8 +15,6 @@ namespace HotelSiteTuesday.Infraestructure.Core
 
         private readonly HotelContext context;
         private readonly DbSet<TEntity> DBEntity;
-        private object logger;
-
         protected BaseRepository(HotelContext context)
         {
             this.context = context;

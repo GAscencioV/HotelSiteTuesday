@@ -14,3 +14,19 @@ C:\Users\Dienely Frias\OneDrive - Instituto Tecnológico de Las Américas (ITLA)
 C:\Users\Dienely Frias\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\refint\HotelSiteTuesday.Infraestructure.dll
 C:\Users\Dienely Frias\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.pdb
 C:\Users\Dienely Frias\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\ref\HotelSiteTuesday.Infraestructure.dll
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\bin\Debug\net7.0\HotelSiteTuesday.Infraestructure.deps.json
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\bin\Debug\net7.0\HotelSiteTuesday.Infraestructure.dll
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\bin\Debug\net7.0\HotelSiteTuesday.Infraestructure.pdb
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\bin\Debug\net7.0\HotelSiteTuesday.Domain.dll
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\bin\Debug\net7.0\HotelSiteTuesday.Domain.pdb
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.csproj.AssemblyReference.cache
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.AssemblyInfoInputs.cache
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.AssemblyInfo.cs
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.sourcelink.json
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSit.E7A1B121.Up2Date
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.dll
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\refint\HotelSiteTuesday.Infraestructure.dll
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\HotelSiteTuesday.Infraestructure.pdb
+C:\Users\Dienely Frias\Desktop\Itla\4to Cuatrimestre\Programacion 2\HotelSiteTuesday\HotelSiteTuesday.Infraestructure\obj\Debug\net7.0\ref\HotelSiteTuesday.Infraestructure.dll
