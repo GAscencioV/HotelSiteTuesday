@@ -1,6 +1,6 @@
 ﻿using HotelSiteTuesday.Api.Dtos.EstadoHabitacion;
 
-namespace HotelSiteTuesday.Api.Models
+namespace HotelSiteTuesday.Api.Models.EstadoHabitacion
 {
     public class EstadoHabitacionGetModel
     {

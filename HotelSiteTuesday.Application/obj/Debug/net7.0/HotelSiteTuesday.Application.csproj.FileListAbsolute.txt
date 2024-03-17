@@ -10,3 +10,9 @@ C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSit
 C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\refint\HotelSiteTuesday.Application.dll
 C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\HotelSiteTuesday.Application.pdb
 C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\ref\HotelSiteTuesday.Application.dll
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\bin\Debug\net7.0\HotelSiteTuesday.Domain.dll
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\bin\Debug\net7.0\HotelSiteTuesday.Infraestructure.dll
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\bin\Debug\net7.0\HotelSiteTuesday.Infraestructure.pdb
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\bin\Debug\net7.0\HotelSiteTuesday.Domain.pdb
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\HotelSiteTuesday.Application.csproj.AssemblyReference.cache
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Application\obj\Debug\net7.0\HotelSit.34D74BA4.Up2Date

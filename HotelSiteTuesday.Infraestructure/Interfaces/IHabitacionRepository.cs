@@ -1,6 +1,6 @@
 ﻿using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Domain.Repository;
-using HotelSiteTuesday.Infraestructure.Models;
+using HotelSiteTuesday.Infraestructure.Models.Habitacion;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,5 +1,6 @@
 using HotelSiteTuesday.Infraestructure.Context;
 using HotelSiteTuesday.Infraestructure.Interfaces;
+using HotelSiteTuesday.Infraestructure.Logger;
 using HotelSiteTuesday.Infraestructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,8 +13,10 @@ builder.Services.AddDbContext<HotelContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("HotelContext")));
 
 //Repositories
+builder.Services.AddScoped<ILoggerBase, LoggerBase>();
 builder.Services.AddScoped<IHabitacionRepository, HabitacionRepository>();
 builder.Services.AddScoped<IEstadoHabitacionRepository, EstadoHabitacionRepository>();
+
 
 
 builder.Services.AddControllers();

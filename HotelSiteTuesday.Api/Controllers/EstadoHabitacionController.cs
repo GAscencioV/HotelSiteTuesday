@@ -1,6 +1,7 @@
 ﻿using HotelSiteTuesday.Api.Dtos.EstadoHabitacion;
 using HotelSiteTuesday.Api.Dtos.Habitacion;
 using HotelSiteTuesday.Api.Models;
+using HotelSiteTuesday.Api.Models.EstadoHabitacion;
 using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -18,26 +19,29 @@ namespace HotelSiteTuesday.Api.Controllers
             this.estadoHabitacionRepository = estadoHabitacionRepository;
         }
 
-        [HttpGet("GetEstadoHabitacion")]
+        [HttpGet("GetEstadosHabitaciones")]
         public IActionResult Get()
         {
-            var estadohabitacion = this.estadoHabitacionRepository.GetEntities().Select(cd => new EstadoHabitacionGetModel()
+            var estadosHabitacion = this.estadoHabitacionRepository.GetEntities()
+                .Select(cd => new EstadoHabitacionGetModel()
             {
                 IdEstadoHabitacion = cd.IdEstadoHabitacion,
                 Descripcion = cd.Descripcion,
             });
 
-            return Ok(estadohabitacion);
+            return Ok(estadosHabitacion);
         }
 
         [HttpPost("SaveEstadoHabitacion")]
-        public IActionResult Post([FromBody] EstadoHabitacionAddDto habitacionAddModel)
+        public IActionResult Post([FromBody] EstadoHabitacionAddDto estadoHabitacionAddModel)
         {
-            this.estadoHabitacionRepository.Save(new Domain.Entities.EstadoHabitacion()
+            var estadosHabitacion = new EstadoHabitacion
             {
-                IdEstadoHabitacion = habitacionAddModel.IdEstadoHabitacion,
-                Descripcion = habitacionAddModel.Descripcion
-            });
+                IdEstadoHabitacion = estadoHabitacionAddModel.IdEstadoHabitacion,
+                Descripcion = estadoHabitacionAddModel.Descripcion
+            };
+
+            estadoHabitacionRepository.Save(estadosHabitacion);
 
             return Ok("El estado de la habitacion ha sido guardado correctamente.");
         }
@@ -45,11 +49,13 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpPost("UpdateEstadoHabitacion")]
         public IActionResult Put([FromBody] EstadoHabitacionUpdateDto estadoHabitacionUpdate)
         {
-            this.estadoHabitacionRepository.Update(new EstadoHabitacion()
+            var estadoshabitacion = new EstadoHabitacion
             {
                 IdEstadoHabitacion = estadoHabitacionUpdate.IdEstadoHabitacion,
                 Descripcion = estadoHabitacionUpdate.Descripcion
-            });
+            };
+
+            estadoHabitacionRepository.Update(estadoshabitacion);
 
             return Ok("El estado de la habitacion ha sido actualizado correctamente.");
         }
@@ -57,7 +63,7 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpDelete("RemoveEstadoHabitacion")]
         public IActionResult Remove([FromBody] EstadoHabitacionRemoveDto estadoHabitacionRemove)
         {
-            this.estadoHabitacionRepository.Remove(new EstadoHabitacion()
+            estadoHabitacionRepository.Remove(new EstadoHabitacion()
             {
                 IdEstadoHabitacion = estadoHabitacionRemove.IdEstadoHabitacion, 
             });

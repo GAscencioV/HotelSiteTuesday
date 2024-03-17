@@ -3,7 +3,8 @@ using HotelSiteTuesday.Infraestructure.Context;
 using HotelSiteTuesday.Infraestructure.Core;
 using HotelSiteTuesday.Infraestructure.Exceptions;
 using HotelSiteTuesday.Infraestructure.Interfaces;
-using HotelSiteTuesday.Infraestructure.Models;
+using HotelSiteTuesday.Infraestructure.Models.Habitacion;
+using static System.Formats.Asn1.AsnWriter;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -16,12 +17,14 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
     public class HabitacionRepository : BaseRepository<Habitacion>, IHabitacionRepository
     {
         private readonly HotelContext context;
-        private readonly ILogger<HabitacionRepository> logger;
+        private readonly ILoggerBase logger;
+        private readonly Action<string> errorMethod;
 
-        public HabitacionRepository(HotelContext context, ILogger<HabitacionRepository> logger) : base (context)
+        public HabitacionRepository(HotelContext context, ILoggerBase logger) : base (context)
         {
             this.context = context;
             this.logger = logger;
+            errorMethod = logger.LogError;
         }
 
         public override List<Habitacion> GetEntities() 
@@ -52,7 +55,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
 
             catch (Exception ex)
             {
-                this.logger.LogError("Error actualizando la habitacion", ex.ToString());   
+                errorMethod("Error actualizando la habitacion" + ex.ToString());   
             }
         }
 
@@ -75,7 +78,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             }
             catch (Exception ex)
             {
-                logger.LogError("Error al eliminar la habitación", ex.ToString());
+                errorMethod("Error al eliminar la habitación" + ex.ToString());
             }
         }
 
@@ -91,7 +94,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError("Error creando la habitacion", ex.ToString());
+                errorMethod("Error creando la habitacion" + ex.ToString());
             }
         }
 
@@ -121,7 +124,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError("Error obteniendo los estado de habitacion", ex.ToString());
+                errorMethod("Error obteniendo los estado de habitacion" + ex.ToString());
             }
 
             return habitacion;
@@ -152,7 +155,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError("Error obteniendo las habitaciones por piso", ex.ToString());
+                errorMethod("Error obteniendo las habitaciones por piso" + ex.ToString());
             }
 
             return habitacion;
@@ -172,7 +175,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
                                   IdCategoria = ca.IdCategoria,
                                   Descripcion = ca.Descripcion,
                                   Numero = ha.Numero,
-                                  Detalle = ha.Detalle,
+                                  Detalle = ha.Detalle, 
                                   Precio = ha.Precio,
                                   IdPiso = ha.IdPiso,
                                   IdEstadoHabitacion = ha.IdEstadoHabitacion,
@@ -183,7 +186,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError("Error obteniendo las habitaciones por categoria", ex.ToString());
+                errorMethod("Error obteniendo las habitaciones por categoria" + ex.ToString());
             }
 
             return habitacion;

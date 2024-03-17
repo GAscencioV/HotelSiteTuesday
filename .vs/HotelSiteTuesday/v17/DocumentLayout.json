@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2065F8C2-8104-47E5-AEEE-B3563079E4A7}|HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj|c:\\users\\hanser perez\\documents\\itla\\c1-2024\\programacion ll\\proyecto - hotelsitetuesday\\hotelsitetuesday\\hotelsitetuesday.application\\service\\habitacionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2065F8C2-8104-47E5-AEEE-B3563079E4A7}|HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj|solutionrelative:hotelsitetuesday.application\\service\\habitacionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2065F8C2-8104-47E5-AEEE-B3563079E4A7}|HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj|c:\\users\\hanser perez\\documents\\itla\\c1-2024\\programacion ll\\proyecto - hotelsitetuesday\\hotelsitetuesday\\hotelsitetuesday.application\\service\\estadohabitacionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2065F8C2-8104-47E5-AEEE-B3563079E4A7}|HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj|solutionrelative:hotelsitetuesday.application\\service\\estadohabitacionservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D958F4E-B587-43D3-BFC1-61D012EFF817}|HotelSiteTuesday.Api\\HotelSiteTuesday.Api.csproj|c:\\users\\hanser perez\\documents\\itla\\c1-2024\\programacion ll\\proyecto - hotelsitetuesday\\hotelsitetuesday\\hotelsitetuesday.api\\controllers\\estadohabitacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D958F4E-B587-43D3-BFC1-61D012EFF817}|HotelSiteTuesday.Api\\HotelSiteTuesday.Api.csproj|solutionrelative:hotelsitetuesday.api\\controllers\\estadohabitacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 318,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +31,51 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HabitacionServices.cs",
+              "DocumentMoniker": "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\HotelSiteTuesday.Application\\Service\\HabitacionServices.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Application\\Service\\HabitacionServices.cs",
+              "ToolTip": "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\HotelSiteTuesday.Application\\Service\\HabitacionServices.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Application\\Service\\HabitacionServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T03:37:20.119Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 318,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EstadoHabitacionController.cs",
+              "DocumentMoniker": "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\HotelSiteTuesday.Api\\Controllers\\EstadoHabitacionController.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Api\\Controllers\\EstadoHabitacionController.cs",
+              "ToolTip": "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\HotelSiteTuesday.Api\\Controllers\\EstadoHabitacionController.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Api\\Controllers\\EstadoHabitacionController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T11:19:08.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EstadoHabitacionServices.cs",
+              "DocumentMoniker": "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\HotelSiteTuesday.Application\\Service\\EstadoHabitacionServices.cs",
+              "RelativeDocumentMoniker": "HotelSiteTuesday.Application\\Service\\EstadoHabitacionServices.cs",
+              "ToolTip": "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\HotelSiteTuesday.Application\\Service\\EstadoHabitacionServices.cs",
+              "RelativeToolTip": "HotelSiteTuesday.Application\\Service\\EstadoHabitacionServices.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJQAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T03:37:20.75Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -16,12 +16,14 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
     public class EstadoHabitacionRepository : BaseRepository<EstadoHabitacion>, IEstadoHabitacionRepository
     {
         private readonly HotelContext context;
-        private readonly ILogger<EstadoHabitacion> logger;
+        private readonly ILoggerBase logger;
+        private readonly Action<string> errorMethod;
 
-        public EstadoHabitacionRepository(HotelContext context, ILogger<EstadoHabitacion> logger) : base (context)
+        public EstadoHabitacionRepository(HotelContext context, ILoggerBase logger) : base (context)
         {
             this.context = context;
             this.logger = logger;
+            errorMethod = logger.LogError;
         }
 
         public override List<EstadoHabitacion> GetEntities()
@@ -42,7 +44,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError("Error actualizando la descripcion de la Habitacion", ex.ToString());
+                errorMethod("Error actualizando la descripcion de la Habitacion" + ex.ToString());
             }
         }
 
@@ -65,7 +67,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError("Error al eliminar el estado de habitación", ex.ToString());
+                errorMethod("Error al eliminar el estado de habitación" + ex.ToString());
             }
         }
 
@@ -81,7 +83,7 @@ namespace HotelSiteTuesday.Infraestructure.Repositories
             }
             catch (Exception ex)
             {
-                this.logger.LogError("Error creando el estado de la habitacion", ex.ToString());
+                errorMethod("Error creando el estado de la habitacion" + ex.ToString());
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using HotelSiteTuesday.Api.Dtos.Habitacion;
 using HotelSiteTuesday.Api.Models;
+using HotelSiteTuesday.Api.Models.Habitacion;
 using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -12,16 +13,17 @@ namespace HotelSiteTuesday.Api.Controllers
     public class HabitacionController : ControllerBase
     {
         private readonly IHabitacionRepository habitacionRepository;
-
+          
         public HabitacionController(IHabitacionRepository habitacionRepository)
         {
             this.habitacionRepository = habitacionRepository;
         }
 
-        [HttpGet("GetHabitacion")]
+        [HttpGet("GetHabitaciones")]
         public IActionResult Get()
         {
-            var habitacion = this.habitacionRepository.GetEntities().Select(cd => new HabitacionGetModel()
+            var habitacion = habitacionRepository.GetEntities().
+                Select(cd => new HabitacionGetModel()
 
             {
                 IdHabitacion = cd.IdHabitacion,
@@ -36,13 +38,60 @@ namespace HotelSiteTuesday.Api.Controllers
             return Ok(habitacion);
         }
 
+        [HttpPost("SaveHabitacion")]
+        public IActionResult Post([FromBody] HabitacionAddDto habitacionAddModel)
+        {
+            var habitacion = new Domain.Entities.Habitacion()
+            {
+                Numero = habitacionAddModel.Numero,
+                Detalle = habitacionAddModel.Detalle,
+                Precio = habitacionAddModel.Precio,
+            };
+
+            habitacionRepository.Save(habitacion);
+
+            return Ok("Habitacion guardada correctamente.");
+        }
+
+        [HttpPost("UpdateHabitacion")]
+        public IActionResult Put([FromBody] HabitacionUpdateDto habitacionUpdate)
+        {
+            var habitacion = new Habitacion
+            {
+                IdHabitacion = habitacionUpdate.IdHabitacion,
+                Numero = habitacionUpdate.Numero,
+                Detalle = habitacionUpdate.Detalle,
+                Precio = habitacionUpdate.Precio,
+            };
+
+            habitacionRepository.Update(habitacion);
+
+            return Ok("Habitacion actualizada correctamente.");
+        }
+
+        [HttpDelete("RemoveHabitacion")]
+        public IActionResult Remove([FromBody] HabitacionRemoveDto habitacionRemove)
+        {
+            habitacionRepository.Remove(new Habitacion()
+            {
+                IdHabitacion = habitacionRemove.IdHabitacion,
+            });
+
+            return Ok("Habitacion eliminada correctamente.");
+        }
+
         //I need to keep looking for a better way to filter those requests. 
         [HttpGet("GetHabitacionByEstadoHabitacion")]
         public IActionResult GetHabitacionByEstadoHabitacion(int IdEstadoHabitacion) 
         {
             var habitacionbyEstado = this.habitacionRepository.GetHabitacionByEstadoHabitacion(IdEstadoHabitacion);
 
-            return Ok(habitacionbyEstado);
+            if (habitacionbyEstado.Any())
+            {
+                return Ok(habitacionbyEstado);
+            }
+
+            return NotFound("No se encontraron habitaciones con el estado especificado.");
         }
 
         [HttpGet("GetHabitacionByPiso")]
@@ -50,7 +99,12 @@ namespace HotelSiteTuesday.Api.Controllers
         {
             var habitacionbyPiso = this.habitacionRepository.GetHabitacionByPiso(IdPiso);
 
-            return Ok(habitacionbyPiso);
+            if (habitacionbyPiso.Any())
+            {
+                return Ok(habitacionbyPiso);
+            }
+
+            return NotFound("No se encontraron los pisos con el estado especificado.");
         }
 
 
@@ -59,46 +113,13 @@ namespace HotelSiteTuesday.Api.Controllers
         {
             var habitacionbyHabitacion = this.habitacionRepository.GetHabitacionByCategoria(IdCategoria);
 
-            return Ok(habitacionbyHabitacion);
-        }
-
-
-        [HttpPost("SaveHabitacion")]
-        public IActionResult Post([FromBody] HabitacionAddDto habitacionAddModel)
-        {
-            this.habitacionRepository.Save(new Domain.Entities.Habitacion() 
+            if (habitacionbyHabitacion.Any())
             {
-                Numero = habitacionAddModel.Numero,
-                Detalle = habitacionAddModel.Detalle,
-                Precio = habitacionAddModel.Precio,
-            });
+                return Ok(habitacionbyHabitacion);
+            }
 
-            return Ok("Habitacion guardada correctamente.");
+            return NotFound("No se encontraron las categorias con el estado especificado.");
         }
 
-        [HttpPost("UpdateHabitacion")]
-        public IActionResult Put([FromBody] HabitacionUpdateDto habitacionUpdate)
-        {
-            this.habitacionRepository.Update(new Habitacion() 
-            {
-                IdHabitacion = habitacionUpdate.IdHabitacion,
-                Numero = habitacionUpdate.Numero,
-                Detalle = habitacionUpdate.Detalle,
-                Precio = habitacionUpdate.Precio,
-            });
-
-            return Ok("Habitacion actualizada correctamente.");
-        }
-
-        [HttpDelete("RemoveHabitacion")]
-        public IActionResult Remove([FromBody] HabitacionRemoveDto habitacionRemove)
-        {
-            this.habitacionRepository.Remove(new Habitacion()
-            {
-                IdHabitacion = habitacionRemove.IdHabitacion,
-            });
-
-            return Ok("Habitacion eliminada correctamente.");
-        }
     }
 }

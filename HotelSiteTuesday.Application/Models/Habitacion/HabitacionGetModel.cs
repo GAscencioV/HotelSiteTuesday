@@ -1,6 +1,10 @@
-﻿using HotelSiteTuesday.Api.Dtos.Habitacion;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace HotelSiteTuesday.Api.Models
+namespace HotelSiteTuesday.Application.Models.Habitacion
 {
     public class HabitacionGetModel
     {
