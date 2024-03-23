@@ -11,9 +11,10 @@ namespace HotelSiteTuesday.Application.Service
 {
     public interface IEstadoHabitacionServices
     {
-        ServiceResult<List<EstadoHabitacionGetModel>> GetEstadoHabitaciones();
-        ServiceResult<EstadoHabitacionGetModel> SaveEstadoHabitacion(EstadoHabitacionDto estadoHabitacionDto);
-        ServiceResult<EstadoHabitacionGetModel> UpdateEstadoHabitacion(EstadoHabitacionDto estadoHabitacionDto);
-        ServiceResult<EstadoHabitacionGetModel> RemoveEstadoHabitacion(EstadoHabitacionDto estadoHabitacionDto);
+        ServiceResult<List<EstadoHabitacionGetModel>> GetEstadosHabitaciones();
+        ServiceResult<EstadoHabitacionGetModel> GetEstadosHabitacionesbyId(int IdEstadoHabitacion);
+        ServiceResult<EstadoHabitacionGetModel> SaveEstadoHabitacion(EstadoHabitacionAddDto estadoHabitacionDto);
+        ServiceResult<EstadoHabitacionGetModel> UpdateEstadoHabitacion(EstadoHabitacionUpdateDto estadoHabitacionDto);
+        ServiceResult<EstadoHabitacionGetModel> RemoveEstadoHabitacion(EstadoHabitacionRemoveDto estadoHabitacionDto);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using HotelSiteTuesday.Api.Dtos.Habitacion;
 using HotelSiteTuesday.Api.Models;
 using HotelSiteTuesday.Api.Models.Habitacion;
+using HotelSiteTuesday.Application.Service;
 using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -12,113 +13,117 @@ namespace HotelSiteTuesday.Api.Controllers
     [ApiController]
     public class HabitacionController : ControllerBase
     {
-        private readonly IHabitacionRepository habitacionRepository;
+        private readonly IHabitacionServices habitacionService;
           
-        public HabitacionController(IHabitacionRepository habitacionRepository)
+        public HabitacionController(IHabitacionServices habitacionService)
         {
-            this.habitacionRepository = habitacionRepository;
+            this.habitacionService = habitacionService;
         }
 
         [HttpGet("GetHabitaciones")]
         public IActionResult Get()
         {
-            var habitacion = habitacionRepository.GetEntities().
-                Select(cd => new HabitacionGetModel()
+            var result = this.habitacionService.GetHabitaciones();
 
+            if (!result.Success)
             {
-                IdHabitacion = cd.IdHabitacion,
-                Numero = cd.Numero,
-                Detalle = cd.Detalle,
-                Precio = cd.Precio,
-                IdEstadoHabitacion = cd.IdEstadoHabitacion,
-                IdPiso = cd.IdPiso,
-                IdCategoria = cd.IdCategoria,
-            });
+                return BadRequest(result);
+            }
 
-            return Ok(habitacion);
+            return Ok(result);
+        }
+
+        [HttpGet("GetHabitacionById")]
+        public IActionResult Get(int id)
+        {
+            var result = this.habitacionService.GetHabitacion(id);
+
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
         }
 
         [HttpPost("SaveHabitacion")]
-        public IActionResult Post([FromBody] HabitacionAddDto habitacionAddModel)
+        public IActionResult Post([FromBody] Application.Dtos.Habitacion.HabitacionAddDto habitacionAddModel)
         {
-            var habitacion = new Domain.Entities.Habitacion()
+            var result = this.habitacionService.SaveHabitacion(habitacionAddModel);
+
+            if (!result.Success)
             {
-                Numero = habitacionAddModel.Numero,
-                Detalle = habitacionAddModel.Detalle,
-                Precio = habitacionAddModel.Precio,
-            };
+                return BadRequest(result);
+            }
 
-            habitacionRepository.Save(habitacion);
-
-            return Ok("Habitacion guardada correctamente.");
+            return Ok(result);
         }
 
         [HttpPost("UpdateHabitacion")]
-        public IActionResult Put([FromBody] HabitacionUpdateDto habitacionUpdate)
+        public IActionResult Put([FromBody] Application.Dtos.Habitacion.HabitacionUpdateDto habitacionUpdate)
         {
-            var habitacion = new Habitacion
+            var result = this.habitacionService.UpdateHabitacion(habitacionUpdate);
+
+            if (!result.Success)
             {
-                IdHabitacion = habitacionUpdate.IdHabitacion,
-                Numero = habitacionUpdate.Numero,
-                Detalle = habitacionUpdate.Detalle,
-                Precio = habitacionUpdate.Precio,
-            };
+                return BadRequest(result);
+            }
 
-            habitacionRepository.Update(habitacion);
-
-            return Ok("Habitacion actualizada correctamente.");
+            return Ok(result);
         }
 
         [HttpDelete("RemoveHabitacion")]
-        public IActionResult Remove([FromBody] HabitacionRemoveDto habitacionRemove)
+        public IActionResult Remove([FromBody] Application.Dtos.Habitacion.HabitacionRemoveDto habitacionRemove)
         {
-            habitacionRepository.Remove(new Habitacion()
-            {
-                IdHabitacion = habitacionRemove.IdHabitacion,
-            });
+            var result = this.habitacionService.RemoveHabitacion(habitacionRemove);
 
-            return Ok("Habitacion eliminada correctamente.");
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
         }
 
-        //I need to keep looking for a better way to filter those requests. 
+        //It needs to be implemented
         [HttpGet("GetHabitacionByEstadoHabitacion")]
         public IActionResult GetHabitacionByEstadoHabitacion(int IdEstadoHabitacion) 
         {
-            var habitacionbyEstado = this.habitacionRepository.GetHabitacionByEstadoHabitacion(IdEstadoHabitacion);
+            var result = this.habitacionService.GetHabitacionByEstadoHabitacion(IdEstadoHabitacion);
 
-            if (habitacionbyEstado.Any())
+            if (!result.Success)
             {
-                return Ok(habitacionbyEstado);
+                return BadRequest(result);
             }
 
-            return NotFound("No se encontraron habitaciones con el estado especificado.");
+            return Ok(result);
         }
 
         [HttpGet("GetHabitacionByPiso")]
         public IActionResult GetHabitacionByPiso(int IdPiso)
         {
-            var habitacionbyPiso = this.habitacionRepository.GetHabitacionByPiso(IdPiso);
+            var result = this.habitacionService.GetHabitacionByPiso(IdPiso);
 
-            if (habitacionbyPiso.Any())
+            if (!result.Success)
             {
-                return Ok(habitacionbyPiso);
+                return BadRequest(result);
             }
 
-            return NotFound("No se encontraron los pisos con el estado especificado.");
+            return Ok(result);
         }
 
 
         [HttpGet("GetHabitacionByCategoria")]
         public IActionResult GetByCategoria(int IdCategoria)
         {
-            var habitacionbyHabitacion = this.habitacionRepository.GetHabitacionByCategoria(IdCategoria);
+            var result = this.habitacionService.GetHabitacionByCategoria(IdCategoria);
 
-            if (habitacionbyHabitacion.Any())
+            if (!result.Success)
             {
-                return Ok(habitacionbyHabitacion);
+                return BadRequest(result);
             }
 
-            return NotFound("No se encontraron las categorias con el estado especificado.");
+            return Ok(result);
         }
 
     }

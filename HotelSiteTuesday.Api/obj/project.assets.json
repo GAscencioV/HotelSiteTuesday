@@ -1091,6 +1091,20 @@
           }
         }
       },
+      "HotelSiteTuesday.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "HotelSiteTuesday.Infraestructure": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HotelSiteTuesday.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HotelSiteTuesday.Application.dll": {}
+        }
+      },
       "HotelSiteTuesday.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -3159,6 +3173,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "HotelSiteTuesday.Application/1.0.0": {
+      "type": "project",
+      "path": "../HotelSiteTuesday.Application/HotelSiteTuesday.Application.csproj",
+      "msbuildProject": "../HotelSiteTuesday.Application/HotelSiteTuesday.Application.csproj"
+    },
     "HotelSiteTuesday.Domain/1.0.0": {
       "type": "project",
       "path": "../HotelSiteTuesday.Domain/HotelSiteTuesday.Domain.csproj",
@@ -3172,6 +3191,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "HotelSiteTuesday.Application >= 1.0.0",
       "HotelSiteTuesday.Infraestructure >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.13",
       "Swashbuckle.AspNetCore >= 6.5.0"
@@ -3204,6 +3224,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj": {
+              "projectPath": "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\HotelSiteTuesday.Application\\HotelSiteTuesday.Application.csproj"
+            },
             "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj": {
               "projectPath": "C:\\Users\\Hanser Perez\\Documents\\ITLA\\C1-2024\\Programacion ll\\Proyecto - HotelSiteTuesday\\HotelSiteTuesday\\HotelSiteTuesday.Infraestructure\\HotelSiteTuesday.Infraestructure.csproj"
             }

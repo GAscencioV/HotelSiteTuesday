@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "HotelSiteTuesday.Api/1.0.0": {
         "dependencies": {
+          "HotelSiteTuesday.Application": "1.0.0",
           "HotelSiteTuesday.Infraestructure": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.13",
           "Swashbuckle.AspNetCore": "6.5.0"
@@ -560,6 +561,15 @@
           }
         }
       },
+      "HotelSiteTuesday.Application/1.0.0": {
+        "dependencies": {
+          "HotelSiteTuesday.Infraestructure": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        },
+        "runtime": {
+          "HotelSiteTuesday.Application.dll": {}
+        }
+      },
       "HotelSiteTuesday.Domain/1.0.0": {
         "runtime": {
           "HotelSiteTuesday.Domain.dll": {}
@@ -1016,6 +1026,11 @@
       "sha512": "sha512-IXoJOXIqc39AIe+CIR7koBtRGMiCt/LPM3lI+PELtDIy9XdyeSrwXFdWV9dzJ2Awl0paLWUaknLxFQ5HpHZUog==",
       "path": "system.windows.extensions/6.0.0",
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
+    },
+    "HotelSiteTuesday.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "HotelSiteTuesday.Domain/1.0.0": {
       "type": "project",

@@ -1,16 +1,10 @@
 ﻿using HotelSiteTuesday.Application.Core;
 using HotelSiteTuesday.Application.Dtos.EstadoHabitacion;
-using HotelSiteTuesday.Application.Dtos.Habitacion;
 using HotelSiteTuesday.Application.Exceptions;
 using HotelSiteTuesday.Application.Models.EstadoHabitacion;
+using HotelSiteTuesday.Application.Models.Habitacion;
 using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Interfaces;
-using HotelSiteTuesday.Infraestructure.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelSiteTuesday.Application.Service
 {
@@ -28,7 +22,7 @@ namespace HotelSiteTuesday.Application.Service
             this.estadoHabitacionRepository = estadoHabitacionRepository;
         }
 
-        public ServiceResult<List<EstadoHabitacionGetModel>> GetEstadoHabitaciones()
+        public ServiceResult<List<EstadoHabitacionGetModel>> GetEstadosHabitaciones()
         {
             var result = new ServiceResult<List<EstadoHabitacionGetModel>>();
 
@@ -52,7 +46,41 @@ namespace HotelSiteTuesday.Application.Service
             return result;
         }
 
-        private void ValidarEstadoHabitacion(EstadoHabitacionDto estadoHabitacionDto)
+        public ServiceResult<EstadoHabitacionGetModel> GetEstadosHabitacionesbyId(int IdEstadoHabitacion)
+        {
+            var result = new ServiceResult<EstadoHabitacionGetModel>();
+
+            try
+            {
+               var estadoHabitacion = estadoHabitacionRepository.GetEntity(IdEstadoHabitacion);
+
+                if (estadoHabitacion == null)
+                {
+                    result.Success = false;
+                    result.Message = "No existe un estado de habitacion con ese ID.";
+                }
+
+                else
+                {
+                    result.Data = new EstadoHabitacionGetModel
+                    {
+                        IdEstadoHabitacion = estadoHabitacion.IdEstadoHabitacion,
+                        Descripcion = estadoHabitacion.Descripcion,
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = "Error obteniendo los estados de habitacion.";
+                errorMethod(result.Message + ex.ToString());
+            }
+
+            return result;
+        }
+
+        //Method to validate when you save a room state
+        private void ValidarEstadoHabitacion(EstadoHabitacionAddDto estadoHabitacionDto)
         {
             if (string.IsNullOrEmpty(estadoHabitacionDto.Descripcion))
             {
@@ -65,7 +93,7 @@ namespace HotelSiteTuesday.Application.Service
             }
         }
 
-        public ServiceResult<EstadoHabitacionGetModel> SaveEstadoHabitacion(EstadoHabitacionDto estadoHabitacionDto)
+        public ServiceResult<EstadoHabitacionGetModel> SaveEstadoHabitacion(EstadoHabitacionAddDto estadoHabitacionDto)
         {
             var result = new ServiceResult<EstadoHabitacionGetModel>();
 
@@ -100,7 +128,7 @@ namespace HotelSiteTuesday.Application.Service
             return result;
         }
 
-        public ServiceResult<EstadoHabitacionGetModel> UpdateEstadoHabitacion(EstadoHabitacionDto estadoHabitacionDto)
+        public ServiceResult<EstadoHabitacionGetModel> UpdateEstadoHabitacion(EstadoHabitacionUpdateDto estadoHabitacionDto)
         {
             var result = new ServiceResult<EstadoHabitacionGetModel>();
 
@@ -131,7 +159,7 @@ namespace HotelSiteTuesday.Application.Service
             return result;
         }
 
-        public ServiceResult<EstadoHabitacionGetModel> RemoveEstadoHabitacion(EstadoHabitacionDto estadoHabitacionDto)
+        public ServiceResult<EstadoHabitacionGetModel> RemoveEstadoHabitacion(EstadoHabitacionRemoveDto estadoHabitacionDto)
         {
             var result = new ServiceResult<EstadoHabitacionGetModel>();
 

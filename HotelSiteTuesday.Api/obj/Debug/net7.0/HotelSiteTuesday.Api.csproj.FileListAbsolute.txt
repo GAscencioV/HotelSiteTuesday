@@ -74,3 +74,5 @@ C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSit
 C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Api\bin\Debug\net7.0\HotelSiteTuesday.Infraestructure.dll
 C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Api\bin\Debug\net7.0\HotelSiteTuesday.Infraestructure.pdb
 C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Api\bin\Debug\net7.0\HotelSiteTuesday.Domain.pdb
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Api\bin\Debug\net7.0\HotelSiteTuesday.Application.dll
+C:\Users\Hanser Perez\Documents\ITLA\C1-2024\Programacion ll\Proyecto - HotelSiteTuesday\HotelSiteTuesday\HotelSiteTuesday.Api\bin\Debug\net7.0\HotelSiteTuesday.Application.pdb

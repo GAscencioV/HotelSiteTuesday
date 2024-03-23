@@ -2,6 +2,7 @@
 using HotelSiteTuesday.Api.Dtos.Habitacion;
 using HotelSiteTuesday.Api.Models;
 using HotelSiteTuesday.Api.Models.EstadoHabitacion;
+using HotelSiteTuesday.Application.Service;
 using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -12,63 +13,77 @@ namespace HotelSiteTuesday.Api.Controllers
     [ApiController]
     public class EstadoHabitacionController : ControllerBase
     {
-        private readonly IEstadoHabitacionRepository estadoHabitacionRepository;
+        private readonly IEstadoHabitacionServices estadohabitacionService;
 
-        public EstadoHabitacionController(IEstadoHabitacionRepository estadoHabitacionRepository) 
+        public EstadoHabitacionController(IEstadoHabitacionServices estadoHabitacionService)
         {
-            this.estadoHabitacionRepository = estadoHabitacionRepository;
+            this.estadohabitacionService = estadoHabitacionService;
         }
 
         [HttpGet("GetEstadosHabitaciones")]
         public IActionResult Get()
         {
-            var estadosHabitacion = this.estadoHabitacionRepository.GetEntities()
-                .Select(cd => new EstadoHabitacionGetModel()
-            {
-                IdEstadoHabitacion = cd.IdEstadoHabitacion,
-                Descripcion = cd.Descripcion,
-            });
+            var result = this.estadohabitacionService.GetEstadosHabitaciones();
 
-            return Ok(estadosHabitacion);
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
+        }
+
+
+        [HttpGet("GetEstadoHabitacionById")]
+        public IActionResult Get(int id)
+        {
+            var result = this.estadohabitacionService.GetEstadosHabitacionesbyId(id);
+
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
         }
 
         [HttpPost("SaveEstadoHabitacion")]
-        public IActionResult Post([FromBody] EstadoHabitacionAddDto estadoHabitacionAddModel)
+        public IActionResult Post([FromBody] Application.Dtos.EstadoHabitacion.EstadoHabitacionAddDto estadoHabitacionAddModel)
         {
-            var estadosHabitacion = new EstadoHabitacion
+            var result = this.estadohabitacionService.SaveEstadoHabitacion(estadoHabitacionAddModel);
+
+            if (!result.Success)
             {
-                IdEstadoHabitacion = estadoHabitacionAddModel.IdEstadoHabitacion,
-                Descripcion = estadoHabitacionAddModel.Descripcion
-            };
+                return BadRequest(result);
+            }
 
-            estadoHabitacionRepository.Save(estadosHabitacion);
-
-            return Ok("El estado de la habitacion ha sido guardado correctamente.");
+            return Ok(result);
         }
 
         [HttpPost("UpdateEstadoHabitacion")]
-        public IActionResult Put([FromBody] EstadoHabitacionUpdateDto estadoHabitacionUpdate)
+        public IActionResult Put([FromBody] Application.Dtos.EstadoHabitacion.EstadoHabitacionUpdateDto estadoHabitacionUpdate)
         {
-            var estadoshabitacion = new EstadoHabitacion
+            var result = this.estadohabitacionService.UpdateEstadoHabitacion(estadoHabitacionUpdate);
+
+            if (!result.Success)
             {
-                IdEstadoHabitacion = estadoHabitacionUpdate.IdEstadoHabitacion,
-                Descripcion = estadoHabitacionUpdate.Descripcion
-            };
+                return BadRequest(result);
+            }
 
-            estadoHabitacionRepository.Update(estadoshabitacion);
-
-            return Ok("El estado de la habitacion ha sido actualizado correctamente.");
+            return Ok(result);
         }
 
         [HttpDelete("RemoveEstadoHabitacion")]
-        public IActionResult Remove([FromBody] EstadoHabitacionRemoveDto estadoHabitacionRemove)
+        public IActionResult Remove([FromBody] Application.Dtos.EstadoHabitacion.EstadoHabitacionRemoveDto estadoHabitacionRemove)
         {
-            estadoHabitacionRepository.Remove(new EstadoHabitacion()
-            {
-                IdEstadoHabitacion = estadoHabitacionRemove.IdEstadoHabitacion, 
-            });
+            var result = this.estadohabitacionService.RemoveEstadoHabitacion(estadoHabitacionRemove);
 
-            return Ok("El estado de la habitacion ha sido eliminado correctamente.");
+            if (!result.Success)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
         }
     }
 }

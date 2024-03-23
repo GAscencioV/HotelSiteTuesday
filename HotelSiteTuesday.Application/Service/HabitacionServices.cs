@@ -4,12 +4,8 @@ using HotelSiteTuesday.Application.Exceptions;
 using HotelSiteTuesday.Application.Models.Habitacion;
 using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Interfaces;
+using HotelSiteTuesday.Infraestructure.Models.Habitacion;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelSiteTuesday.Application.Service
 {
@@ -21,7 +17,7 @@ namespace HotelSiteTuesday.Application.Service
 
         public HabitacionServices(ILoggerBase logger, 
                                   IHabitacionRepository habitacionRepository)
-        {
+        { 
             this.logger = logger;
             errorMethod = logger.LogError;
             this.habitacionRepository = habitacionRepository;
@@ -56,8 +52,48 @@ namespace HotelSiteTuesday.Application.Service
             return result;
         }
 
+        ServiceResult<HabitacionGetModel> IHabitacionServices.GetHabitacion(int IdHabitacion)
+        {
+            var result = new ServiceResult<HabitacionGetModel>();
+
+            try
+            {
+                var habitacion = habitacionRepository.GetEntity(IdHabitacion);
+
+                if (habitacion == null)
+                {
+                    result.Success = false;
+                    result.Message = "No existe una habitacion con ese ID.";
+                }
+
+                else
+                {
+                    result.Data = new HabitacionGetModel
+                    {
+                        IdHabitacion = habitacion.IdHabitacion,
+                        Numero = habitacion.Numero,
+                        Detalle = habitacion.Detalle,
+                        Precio = habitacion.Precio,
+                        IdEstadoHabitacion = habitacion.IdEstadoHabitacion,
+                        IdPiso = habitacion.IdPiso,
+                        IdCategoria = habitacion.IdCategoria
+                    };
+                }
+            }
+
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = "Error obteniendo la habitación";
+                errorMethod(result.Message + ex.ToString());
+            }
+
+            return result;
+        }
+
+
         //Method to validate when you save a room
-        private void ValidarHabitaciones(HabitacionDto habitacionDto)
+        private void ValidarHabitaciones(HabitacionDtoBase habitacionDto)
         {
             if (string.IsNullOrEmpty(habitacionDto.Numero))
             {
@@ -85,7 +121,7 @@ namespace HotelSiteTuesday.Application.Service
             }
         }
 
-        public ServiceResult<HabitacionGetModel> SaveHabitacion(HabitacionDto habitacionDto)
+        public ServiceResult<HabitacionGetModel> SaveHabitacion(HabitacionAddDto habitacionDto)
         {
             var result = new ServiceResult<HabitacionGetModel>();
 
@@ -120,7 +156,7 @@ namespace HotelSiteTuesday.Application.Service
             return result;
         }
 
-        public ServiceResult<HabitacionGetModel> UpdateHabitacion(HabitacionDto habitacionDto)
+        public ServiceResult<HabitacionGetModel> UpdateHabitacion(HabitacionUpdateDto habitacionDto)
         {
            var result = new ServiceResult<HabitacionGetModel>();
 
@@ -154,7 +190,7 @@ namespace HotelSiteTuesday.Application.Service
             return result;
         }
 
-        public ServiceResult<HabitacionGetModel> RemoveHabitacion(HabitacionDto habitacionDto)
+        public ServiceResult<HabitacionGetModel> RemoveHabitacion(HabitacionRemoveDto habitacionDto)
         {
             var result = new ServiceResult<HabitacionGetModel>();
 
@@ -179,6 +215,132 @@ namespace HotelSiteTuesday.Application.Service
             {
                 result.Success = false;
                 result.Message = "Error al eliminar la habitación.";
+                errorMethod(result.Message + ex.ToString());
+            }
+
+            return result;
+        }
+
+        public ServiceResult<List<HabitacionGetModel>> GetHabitacionByPiso(int IdPiso)
+        {
+            var result = new ServiceResult<List<HabitacionGetModel>>();
+
+            try
+            {
+                var habitacionesbyPiso = habitacionRepository.GetHabitacionByPiso(IdPiso);
+
+                if (habitacionesbyPiso == null || !habitacionesbyPiso.Any())
+                {
+                    result.Success = false;
+                    result.Message = "No se encontraron habitaciones para el piso de habitación proporcionado.";
+                }
+
+                else
+                {
+                    result.Data = habitacionesbyPiso.Select(habitacion => new HabitacionGetModel
+                    {
+                        IdHabitacion = habitacion.IdHabitacion,
+                        Numero = habitacion.Numero,
+                        Detalle = habitacion.Detalle,
+                        Precio = habitacion.Precio,
+                        IdEstadoHabitacion = habitacion.IdEstadoHabitacion,
+                        IdPiso = habitacion.IdPiso,
+                        IdCategoria = habitacion.IdCategoria
+
+                    }).ToList();
+
+                    result.Success = true;
+                    result.Message = "Habitaciones obtenidas exitosamente.";
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = "Error obteniendo las habitaciones";
+                errorMethod(result.Message + ex.ToString());
+            }
+
+            return result;
+        }
+
+        public ServiceResult<List<HabitacionGetModel>> GetHabitacionByCategoria(int IdCategoria)
+        {
+            var result = new ServiceResult<List<HabitacionGetModel>>();
+
+            try
+            {
+                var habitacionesbyCategoria = habitacionRepository.GetHabitacionByCategoria(IdCategoria);
+
+                if (habitacionesbyCategoria == null || !habitacionesbyCategoria.Any())
+                {
+                    result.Success = false;
+                    result.Message = "No se encontraron habitaciones para la categoria de habitación proporcionado.";
+                }
+
+                else
+                {
+                    result.Data = habitacionesbyCategoria.Select(habitacion => new HabitacionGetModel
+                    {
+                        IdHabitacion = habitacion.IdHabitacion,
+                        Numero = habitacion.Numero,
+                        Detalle = habitacion.Detalle,
+                        Precio = habitacion.Precio,
+                        IdEstadoHabitacion = habitacion.IdEstadoHabitacion,
+                        IdPiso = habitacion.IdPiso,
+                        IdCategoria = habitacion.IdCategoria
+
+                    }).ToList();
+
+                    result.Success = true;
+                    result.Message = "Habitaciones obtenidas exitosamente.";
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = "Error obteniendo las habitaciones";
+                errorMethod(result.Message + ex.ToString());
+            }
+
+            return result;
+        }
+
+        public ServiceResult<List<HabitacionGetModel>> GetHabitacionByEstadoHabitacion(int IdEstadoHabitacion)
+        {
+            var result = new ServiceResult<List<HabitacionGetModel>>();
+
+            try
+            {
+                var habitacionesbyEstado = habitacionRepository.GetHabitacionByEstadoHabitacion(IdEstadoHabitacion);
+
+                if (habitacionesbyEstado == null || !habitacionesbyEstado.Any())
+                {
+                    result.Success = false;
+                    result.Message = "No se encontraron habitaciones para el estado de habitación proporcionado.";
+                }
+
+                else
+                {
+                    result.Data = habitacionesbyEstado.Select(habitacion => new HabitacionGetModel
+                    {
+                        IdHabitacion = habitacion.IdHabitacion,
+                        Numero = habitacion.Numero,
+                        Detalle = habitacion.Detalle,
+                        Precio = habitacion.Precio,
+                        IdEstadoHabitacion = habitacion.IdEstadoHabitacion,
+                        IdPiso = habitacion.IdPiso,
+                        IdCategoria = habitacion.IdCategoria
+
+                    }).ToList();
+
+                    result.Success = true;
+                    result.Message = "Habitaciones obtenidas exitosamente.";
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = "Error obteniendo las habitaciones";
                 errorMethod(result.Message + ex.ToString());
             }
 

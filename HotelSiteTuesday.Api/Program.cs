@@ -1,3 +1,4 @@
+using HotelSiteTuesday.Application.Service;
 using HotelSiteTuesday.Infraestructure.Context;
 using HotelSiteTuesday.Infraestructure.Interfaces;
 using HotelSiteTuesday.Infraestructure.Logger;
@@ -17,6 +18,9 @@ builder.Services.AddScoped<ILoggerBase, LoggerBase>();
 builder.Services.AddScoped<IHabitacionRepository, HabitacionRepository>();
 builder.Services.AddScoped<IEstadoHabitacionRepository, EstadoHabitacionRepository>();
 
+//App Services
+builder.Services.AddTransient<IHabitacionServices, HabitacionServices>();
+builder.Services.AddTransient<IEstadoHabitacionServices, EstadoHabitacionServices>();
 
 
 builder.Services.AddControllers();

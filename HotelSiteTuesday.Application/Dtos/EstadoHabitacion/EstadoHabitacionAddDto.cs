@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HotelSiteTuesday.Application.Dtos.EstadoHabitacion
 {
-    public record EstadoHabitacionDto
+    public class EstadoHabitacionAddDto : EstadoHabitacionDtoBase
     {
         public int IdEstadoHabitacion { get; set; }
-        public string? Descripcion { get; set; }
+
     }
 }
