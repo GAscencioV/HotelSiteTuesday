@@ -1,4 +1,7 @@
-﻿using HotelSiteTuesday.Application.Core;
+﻿using HotelSiteTuesday.Application.Contracts;
+using HotelSiteTuesday.Application.Core;
+using HotelSiteTuesday.Application.Dtos;
+using HotelSiteTuesday.Application.Dtos.Enums;
 using HotelSiteTuesday.Application.Dtos.Habitacion;
 using HotelSiteTuesday.Application.Exceptions;
 using HotelSiteTuesday.Application.Models.Habitacion;
@@ -9,7 +12,7 @@ using Microsoft.Extensions.Logging;
 
 namespace HotelSiteTuesday.Application.Service
 {
-    public class HabitacionServices : IHabitacionServices
+    public class HabitacionServices : IHabitacionService
     {
         private readonly IHabitacionRepository habitacionRepository;
         private readonly ILoggerBase logger;
@@ -23,42 +26,13 @@ namespace HotelSiteTuesday.Application.Service
             this.habitacionRepository = habitacionRepository;
         }
 
-        public ServiceResult<List<HabitacionGetModel>> GetHabitaciones()
-        {
-            var result = new ServiceResult<List<HabitacionGetModel>>();
-
-            try
-            {
-                result.Data = habitacionRepository.GetEntities()
-                    .Select(cd => new HabitacionGetModel()
-                {
-                    IdHabitacion = cd.IdHabitacion,
-                    Numero = cd.Numero,
-                    Detalle = cd.Detalle,
-                    Precio = cd.Precio,
-                    IdEstadoHabitacion = cd.IdEstadoHabitacion,
-                    IdPiso = cd.IdPiso,
-                    IdCategoria = cd.IdCategoria,
-                    
-                }).ToList();
-            }
-            catch (Exception ex)
-            {
-                result.Success = false;
-                result.Message = "Error obteniendo las habitaciones";
-                errorMethod(result.Message + ex.ToString());
-            }
-
-            return result;
-        }
-
-        ServiceResult<HabitacionGetModel> IHabitacionServices.GetHabitacion(int IdHabitacion)
+        public ServiceResult<HabitacionGetModel> Get(int Id)
         {
             var result = new ServiceResult<HabitacionGetModel>();
 
             try
             {
-                var habitacion = habitacionRepository.GetEntity(IdHabitacion);
+                var habitacion = habitacionRepository.GetEntity(Id);
 
                 if (habitacion == null)
                 {
@@ -91,6 +65,34 @@ namespace HotelSiteTuesday.Application.Service
             return result;
         }
 
+        public ServiceResult<List<HabitacionGetModel>> GetAll()
+        {
+            var result = new ServiceResult<List<HabitacionGetModel>>();
+
+            try
+            {
+                result.Data = habitacionRepository.GetEntities()
+                    .Select(cd => new HabitacionGetModel()
+                    {
+                        IdHabitacion = cd.IdHabitacion,
+                        Numero = cd.Numero,
+                        Detalle = cd.Detalle,
+                        Precio = cd.Precio,
+                        IdEstadoHabitacion = cd.IdEstadoHabitacion,
+                        IdPiso = cd.IdPiso,
+                        IdCategoria = cd.IdCategoria,
+
+                    }).ToList();
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = "Error obteniendo las habitaciones";
+                errorMethod(result.Message + ex.ToString());
+            }
+
+            return result;
+        }
 
         //Method to validate when you save a room
         private void ValidarHabitaciones(HabitacionDtoBase habitacionDto)
@@ -115,25 +117,29 @@ namespace HotelSiteTuesday.Application.Service
                 throw new HabitacionException("El detalle de la habitación debe tener máximo 100 caracteres.");
             }
 
-            if (habitacionRepository.Exists(ca => ca.Numero == habitacionDto.Numero))
+            if (habitacionRepository.Exists(ha => ha.Numero == habitacionDto.Numero))
             {
                 throw new HabitacionException($"La habitación {habitacionDto.Numero} ya existe.");
             }
-        }
 
-        public ServiceResult<HabitacionGetModel> SaveHabitacion(HabitacionAddDto habitacionDto)
+            if (habitacionRepository.Exists(ha => ha.IdHabitacion == habitacionDto.IdHabitacion))
+            {
+                throw new HabitacionException($"La habitacion {habitacionDto.IdHabitacion} no existe.");
+            }
+        }
+        public ServiceResult<HabitacionGetModel> Save(HabitacionAddDto habitacionAddDto)
         {
             var result = new ServiceResult<HabitacionGetModel>();
 
             try
             {
-                ValidarHabitaciones(habitacionDto);
+                ValidarHabitaciones(habitacionAddDto);
 
                 var nuevaHabitacion = new Domain.Entities.Habitacion
                 {
-                    Numero = habitacionDto.Numero,
-                    Detalle = habitacionDto.Detalle,
-                    Precio = habitacionDto.Precio,
+                    Numero = habitacionAddDto.Numero,
+                    Detalle = habitacionAddDto.Detalle,
+                    Precio = habitacionAddDto.Precio,
                 };
 
                 habitacionRepository.Save(nuevaHabitacion);
@@ -156,25 +162,20 @@ namespace HotelSiteTuesday.Application.Service
             return result;
         }
 
-        public ServiceResult<HabitacionGetModel> UpdateHabitacion(HabitacionUpdateDto habitacionDto)
+        public ServiceResult<HabitacionGetModel> Update(HabitacionUpdateDto habitacionUpdate)
         {
-           var result = new ServiceResult<HabitacionGetModel>();
+            var result = new ServiceResult<HabitacionGetModel>();
 
             try
             {
-                if (this.habitacionRepository.Exists(ca => ca.Numero == habitacionDto.Numero))
-                {
-                    result.Success = false;
-                    result.Message = $"La habitacion {habitacionDto.Numero} ya existe.";
-                    return result;
-                }
+                ValidarHabitaciones(habitacionUpdate);
 
                 var habitacion = new Habitacion
                 {
-                    IdHabitacion = habitacionDto.IdHabitacion,
-                    Numero = habitacionDto.Numero,
-                    Detalle = habitacionDto.Detalle,
-                    Precio = habitacionDto.Precio,
+                    IdHabitacion = habitacionUpdate.IdHabitacion,
+                    Numero = habitacionUpdate.Numero,
+                    Detalle = habitacionUpdate.Detalle,
+                    Precio = habitacionUpdate.Precio,
                 };
 
                 habitacionRepository.Update(habitacion);
@@ -190,22 +191,15 @@ namespace HotelSiteTuesday.Application.Service
             return result;
         }
 
-        public ServiceResult<HabitacionGetModel> RemoveHabitacion(HabitacionRemoveDto habitacionDto)
+        public ServiceResult<HabitacionGetModel> Remove(HabitacionRemoveDto habitacionRemoveDto)
         {
             var result = new ServiceResult<HabitacionGetModel>();
 
             try
             {
-                if (this.habitacionRepository.Exists(ca => ca.IdHabitacion == habitacionDto.IdHabitacion))
-                {
-                    result.Success = false;
-                    result.Message = $"La habitacion con el Id {habitacionDto.IdHabitacion} no existe.";
-                    return result;
-                }
-
                 var habitacion = new Habitacion
                 {
-                    IdHabitacion = habitacionDto.IdHabitacion,
+                    IdHabitacion = habitacionRemoveDto.IdHabitacion,
                 };
 
                 habitacionRepository.Remove(habitacion);
@@ -215,48 +209,6 @@ namespace HotelSiteTuesday.Application.Service
             {
                 result.Success = false;
                 result.Message = "Error al eliminar la habitación.";
-                errorMethod(result.Message + ex.ToString());
-            }
-
-            return result;
-        }
-
-        public ServiceResult<List<HabitacionGetModel>> GetHabitacionByPiso(int IdPiso)
-        {
-            var result = new ServiceResult<List<HabitacionGetModel>>();
-
-            try
-            {
-                var habitacionesbyPiso = habitacionRepository.GetHabitacionByPiso(IdPiso);
-
-                if (habitacionesbyPiso == null || !habitacionesbyPiso.Any())
-                {
-                    result.Success = false;
-                    result.Message = "No se encontraron habitaciones para el piso de habitación proporcionado.";
-                }
-
-                else
-                {
-                    result.Data = habitacionesbyPiso.Select(habitacion => new HabitacionGetModel
-                    {
-                        IdHabitacion = habitacion.IdHabitacion,
-                        Numero = habitacion.Numero,
-                        Detalle = habitacion.Detalle,
-                        Precio = habitacion.Precio,
-                        IdEstadoHabitacion = habitacion.IdEstadoHabitacion,
-                        IdPiso = habitacion.IdPiso,
-                        IdCategoria = habitacion.IdCategoria
-
-                    }).ToList();
-
-                    result.Success = true;
-                    result.Message = "Habitaciones obtenidas exitosamente.";
-                }
-            }
-            catch (Exception ex)
-            {
-                result.Success = false;
-                result.Message = "Error obteniendo las habitaciones";
                 errorMethod(result.Message + ex.ToString());
             }
 
@@ -322,6 +274,48 @@ namespace HotelSiteTuesday.Application.Service
                 else
                 {
                     result.Data = habitacionesbyEstado.Select(habitacion => new HabitacionGetModel
+                    {
+                        IdHabitacion = habitacion.IdHabitacion,
+                        Numero = habitacion.Numero,
+                        Detalle = habitacion.Detalle,
+                        Precio = habitacion.Precio,
+                        IdEstadoHabitacion = habitacion.IdEstadoHabitacion,
+                        IdPiso = habitacion.IdPiso,
+                        IdCategoria = habitacion.IdCategoria
+
+                    }).ToList();
+
+                    result.Success = true;
+                    result.Message = "Habitaciones obtenidas exitosamente.";
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = "Error obteniendo las habitaciones";
+                errorMethod(result.Message + ex.ToString());
+            }
+
+            return result;
+        }
+
+        public ServiceResult<List<HabitacionGetModel>> GetHabitacionByPiso(int IdPiso)
+        {
+            var result = new ServiceResult<List<HabitacionGetModel>>();
+
+            try
+            {
+                var habitacionesbyPiso = habitacionRepository.GetHabitacionByPiso(IdPiso);
+
+                if (habitacionesbyPiso == null || !habitacionesbyPiso.Any())
+                {
+                    result.Success = false;
+                    result.Message = "No se encontraron habitaciones para el piso de habitación proporcionado.";
+                }
+
+                else
+                {
+                    result.Data = habitacionesbyPiso.Select(habitacion => new HabitacionGetModel
                     {
                         IdHabitacion = habitacion.IdHabitacion,
                         Numero = habitacion.Numero,

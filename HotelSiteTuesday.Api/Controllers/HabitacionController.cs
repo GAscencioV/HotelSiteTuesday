@@ -1,6 +1,7 @@
 ﻿using HotelSiteTuesday.Api.Dtos.Habitacion;
 using HotelSiteTuesday.Api.Models;
 using HotelSiteTuesday.Api.Models.Habitacion;
+using HotelSiteTuesday.Application.Contracts;
 using HotelSiteTuesday.Application.Service;
 using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Interfaces;
@@ -13,9 +14,9 @@ namespace HotelSiteTuesday.Api.Controllers
     [ApiController]
     public class HabitacionController : ControllerBase
     {
-        private readonly IHabitacionServices habitacionService;
+        private readonly IHabitacionService habitacionService;
           
-        public HabitacionController(IHabitacionServices habitacionService)
+        public HabitacionController(IHabitacionService habitacionService)
         {
             this.habitacionService = habitacionService;
         }
@@ -23,7 +24,7 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpGet("GetHabitaciones")]
         public IActionResult Get()
         {
-            var result = this.habitacionService.GetHabitaciones();
+            var result = this.habitacionService.GetAll();
 
             if (!result.Success)
             {
@@ -36,7 +37,7 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpGet("GetHabitacionById")]
         public IActionResult Get(int id)
         {
-            var result = this.habitacionService.GetHabitacion(id);
+            var result = this.habitacionService.Get(id);
 
             if (!result.Success)
             {
@@ -49,7 +50,7 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpPost("SaveHabitacion")]
         public IActionResult Post([FromBody] Application.Dtos.Habitacion.HabitacionAddDto habitacionAddModel)
         {
-            var result = this.habitacionService.SaveHabitacion(habitacionAddModel);
+            var result = this.habitacionService.Save(habitacionAddModel);
 
             if (!result.Success)
             {
@@ -62,7 +63,7 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpPost("UpdateHabitacion")]
         public IActionResult Put([FromBody] Application.Dtos.Habitacion.HabitacionUpdateDto habitacionUpdate)
         {
-            var result = this.habitacionService.UpdateHabitacion(habitacionUpdate);
+            var result = this.habitacionService.Update(habitacionUpdate);
 
             if (!result.Success)
             {
@@ -75,7 +76,7 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpDelete("RemoveHabitacion")]
         public IActionResult Remove([FromBody] Application.Dtos.Habitacion.HabitacionRemoveDto habitacionRemove)
         {
-            var result = this.habitacionService.RemoveHabitacion(habitacionRemove);
+            var result = this.habitacionService.Remove(habitacionRemove);
 
             if (!result.Success)
             {

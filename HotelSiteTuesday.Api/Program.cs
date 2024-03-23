@@ -1,3 +1,4 @@
+using HotelSiteTuesday.Application.Contracts;
 using HotelSiteTuesday.Application.Service;
 using HotelSiteTuesday.Infraestructure.Context;
 using HotelSiteTuesday.Infraestructure.Interfaces;
@@ -19,8 +20,8 @@ builder.Services.AddScoped<IHabitacionRepository, HabitacionRepository>();
 builder.Services.AddScoped<IEstadoHabitacionRepository, EstadoHabitacionRepository>();
 
 //App Services
-builder.Services.AddTransient<IHabitacionServices, HabitacionServices>();
-builder.Services.AddTransient<IEstadoHabitacionServices, EstadoHabitacionServices>();
+builder.Services.AddTransient<IHabitacionService, HabitacionServices>();
+builder.Services.AddTransient<IEstadoHabitacionService, EstadoHabitacionServices>();
 
 
 builder.Services.AddControllers();

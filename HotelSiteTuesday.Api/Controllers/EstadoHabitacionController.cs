@@ -2,6 +2,7 @@
 using HotelSiteTuesday.Api.Dtos.Habitacion;
 using HotelSiteTuesday.Api.Models;
 using HotelSiteTuesday.Api.Models.EstadoHabitacion;
+using HotelSiteTuesday.Application.Contracts;
 using HotelSiteTuesday.Application.Service;
 using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Interfaces;
@@ -13,9 +14,9 @@ namespace HotelSiteTuesday.Api.Controllers
     [ApiController]
     public class EstadoHabitacionController : ControllerBase
     {
-        private readonly IEstadoHabitacionServices estadohabitacionService;
+        private readonly IEstadoHabitacionService estadohabitacionService;
 
-        public EstadoHabitacionController(IEstadoHabitacionServices estadoHabitacionService)
+        public EstadoHabitacionController(IEstadoHabitacionService estadoHabitacionService)
         {
             this.estadohabitacionService = estadoHabitacionService;
         }
@@ -23,7 +24,7 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpGet("GetEstadosHabitaciones")]
         public IActionResult Get()
         {
-            var result = this.estadohabitacionService.GetEstadosHabitaciones();
+            var result = this.estadohabitacionService.GetAll();
 
             if (!result.Success)
             {
@@ -37,7 +38,7 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpGet("GetEstadoHabitacionById")]
         public IActionResult Get(int id)
         {
-            var result = this.estadohabitacionService.GetEstadosHabitacionesbyId(id);
+            var result = this.estadohabitacionService.Get(id);
 
             if (!result.Success)
             {
@@ -50,7 +51,7 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpPost("SaveEstadoHabitacion")]
         public IActionResult Post([FromBody] Application.Dtos.EstadoHabitacion.EstadoHabitacionAddDto estadoHabitacionAddModel)
         {
-            var result = this.estadohabitacionService.SaveEstadoHabitacion(estadoHabitacionAddModel);
+            var result = this.estadohabitacionService.Save(estadoHabitacionAddModel);
 
             if (!result.Success)
             {
@@ -63,7 +64,7 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpPost("UpdateEstadoHabitacion")]
         public IActionResult Put([FromBody] Application.Dtos.EstadoHabitacion.EstadoHabitacionUpdateDto estadoHabitacionUpdate)
         {
-            var result = this.estadohabitacionService.UpdateEstadoHabitacion(estadoHabitacionUpdate);
+            var result = this.estadohabitacionService.Update(estadoHabitacionUpdate);
 
             if (!result.Success)
             {
@@ -76,7 +77,7 @@ namespace HotelSiteTuesday.Api.Controllers
         [HttpDelete("RemoveEstadoHabitacion")]
         public IActionResult Remove([FromBody] Application.Dtos.EstadoHabitacion.EstadoHabitacionRemoveDto estadoHabitacionRemove)
         {
-            var result = this.estadohabitacionService.RemoveEstadoHabitacion(estadoHabitacionRemove);
+            var result = this.estadohabitacionService.Remove(estadoHabitacionRemove);
 
             if (!result.Success)
             {

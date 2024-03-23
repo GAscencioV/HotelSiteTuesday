@@ -2,6 +2,8 @@
 {
     public class EstadoHabitacionDtoBase
     {
+        public int IdEstadoHabitacion { get; set; }
+
         public string? Descripcion { get; set; }
     }
 }
