@@ -89,7 +89,7 @@ namespace HotelSiteTuesday.Application.Service
 
             try
             {
-                var resultIsValid = this.IsValid(estadoHabitacionAddDto, DtoAction.Save);
+                var resultIsValid = this.Validate(estadoHabitacionAddDto, DtoAction.Save);
 
                 if (!resultIsValid.Success)
                 {
@@ -131,7 +131,7 @@ namespace HotelSiteTuesday.Application.Service
 
             try
             {
-                var resultIsValid = this.IsValid(estadoHabitacionUpdate, DtoAction.Update);
+                var resultIsValid = this.Validate(estadoHabitacionUpdate, DtoAction.Update);
 
                 if (!resultIsValid.Success)
                 {
@@ -184,29 +184,23 @@ namespace HotelSiteTuesday.Application.Service
             return result;
         }
 
-        private ServiceResult<string> IsValid(EstadoHabitacionDtoBase estadoHabitacionDtoBase, DtoAction action)
+        private ServiceResult<string> Validate(EstadoHabitacionDtoBase estadoHabitacionDtoBase, DtoAction action)
         {
             ServiceResult<string> result = new ServiceResult<string>();
 
             if (string.IsNullOrEmpty(estadoHabitacionDtoBase.Descripcion))
             {
-                result.Success = false;
-                result.Message = "La descripcion de la habitacion es requerida.";
-                return result;
+                throw new EstadoHabitacionException("La descripción de la habitación es requerida.");
             }
 
             if (estadoHabitacionDtoBase.Descripcion.Length > 50)
             {
-                result.Success = false;
-                result.Message = "La descripcion debe tener máximo 50 caracteres.";
-                return result;
+                throw new EstadoHabitacionException("La descripción debe tener máximo 50 caracteres.");
             }
 
             if (estadoHabitacionRepository.Exists(ca => ca.IdEstadoHabitacion == estadoHabitacionDtoBase.IdEstadoHabitacion))
             {
-                result.Success = false;
-                result.Message = $"El estado de la habitacion {estadoHabitacionDtoBase.IdEstadoHabitacion} ya existe.";
-                return result;
+                throw new EstadoHabitacionException($"El estado de la habitación {estadoHabitacionDtoBase.IdEstadoHabitacion} ya existe.");
             }
 
             return result;

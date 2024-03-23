@@ -105,7 +105,7 @@ namespace HotelSiteTuesday.Application.Service
 
             try
             {
-                var resultIsValid = this.IsValid(habitacionAddDto, DtoAction.Save);
+                var resultIsValid = this.Validate(habitacionAddDto, DtoAction.Save);
 
                 if (!resultIsValid.Success)
                 {
@@ -147,7 +147,7 @@ namespace HotelSiteTuesday.Application.Service
 
             try
             {
-                var resultIsValid = this.IsValid(habitacionUpdate, DtoAction.Update);
+                var resultIsValid = this.Validate(habitacionUpdate, DtoAction.Update);
 
                 if (!resultIsValid.Success)
                 {
@@ -202,45 +202,35 @@ namespace HotelSiteTuesday.Application.Service
             return result;
         }
 
-        private ServiceResult<string> IsValid(HabitacionDtoBase habitacionDtoBase, DtoAction action)
+        private ServiceResult<string> Validate(HabitacionDtoBase habitacionDtoBase, DtoAction action)
         { 
             ServiceResult<string> result = new ServiceResult<string>();
 
             if (string.IsNullOrEmpty(habitacionDtoBase.Numero))
             {
-                result.Success = false;
-                result.Message = "El numero de la habitacion es requerido.";
-                return result;
+                throw new HabitacionException("El numero de la habitacion es requerido.");
             }
 
             if (habitacionDtoBase.Numero.Length > 50)
             {
-                result.Success = false;
-                result.Message = "El número de la habitación debe tener máximo 50 caracteres.";
-                return result;
+                throw new HabitacionException("El número de la habitación debe tener máximo 50 caracteres.");
             }
 
             if (string.IsNullOrEmpty(habitacionDtoBase.Detalle))
             {
-                result.Success = false; 
-                result.Message = "El detalle de la habitación es requerido.";
-                return result;
+                throw new HabitacionException("El detalle de la habitación es requerido.");
             }
 
             if (habitacionDtoBase.Detalle.Length > 100)
             {
-                result.Success = false;
-                result.Message = "El detalle de la habitación debe tener máximo 100 caracteres.";
-                return result;
+                throw new HabitacionException("El detalle de la habitación debe tener máximo 100 caracteres.");
             }
 
             if (action == DtoAction.Save)
             {
                 if (habitacionRepository.Exists(ha => ha.Numero == habitacionDtoBase.Numero))
                 {
-                    result.Success = false;
-                    result.Message = $"La habitación {habitacionDtoBase.Numero} ya existe.";
-                    return result;
+                    throw new HabitacionException($"La habitación {habitacionDtoBase.Numero} ya existe.");
                 }
             }
 
