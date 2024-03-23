@@ -1,5 +1,6 @@
 ﻿using HotelSiteTuesday.Application.Contracts;
 using HotelSiteTuesday.Application.Core;
+using HotelSiteTuesday.Application.Dtos.Enums;
 using HotelSiteTuesday.Application.Dtos.EstadoHabitacion;
 using HotelSiteTuesday.Application.Dtos.Habitacion;
 using HotelSiteTuesday.Application.Exceptions;
@@ -7,6 +8,7 @@ using HotelSiteTuesday.Application.Models.EstadoHabitacion;
 using HotelSiteTuesday.Application.Models.Habitacion;
 using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Interfaces;
+using HotelSiteTuesday.Infraestructure.Repositories;
 
 namespace HotelSiteTuesday.Application.Service
 {
@@ -80,41 +82,29 @@ namespace HotelSiteTuesday.Application.Service
 
             return result;
         }
-
-        //Method to validate when you save a room state
-        private void ValidarEstadoHabitacion(EstadoHabitacionDtoBase estadoHabitacionDto)
-        {
-            if (string.IsNullOrEmpty(estadoHabitacionDto.Descripcion))
-            {
-                throw new EstadoHabitacionException("La descripcion de la habitacion es requerida.");
-            }
-
-            if (estadoHabitacionDto.Descripcion.Length > 50)
-            {
-                throw new EstadoHabitacionException("La descripcion debe tener máximo 50 caracteres.");
-            }
-
-            if (estadoHabitacionRepository.Exists(ca => ca.IdEstadoHabitacion == estadoHabitacionDto.IdEstadoHabitacion))
-            {
-                throw new EstadoHabitacionException ($"El estado de la habitacion {estadoHabitacionDto.IdEstadoHabitacion} ya existe.");
-            }
-        }
-         
-        public ServiceResult<EstadoHabitacionGetModel> Save(EstadoHabitacionAddDto habitacionAddDto)
+        
+        public ServiceResult<EstadoHabitacionGetModel> Save(EstadoHabitacionAddDto estadoHabitacionAddDto)
         {
             var result = new ServiceResult<EstadoHabitacionGetModel>();
 
             try
             {
-                ValidarEstadoHabitacion(habitacionAddDto);
+                var resultIsValid = this.IsValid(estadoHabitacionAddDto, DtoAction.Save);
+
+                if (!resultIsValid.Success)
+                {
+                    result.Message = resultIsValid.Message;
+                    return result;
+                }
 
                 var nuevoEstadoHabitacion = new Domain.Entities.EstadoHabitacion
                 {
-                    IdEstadoHabitacion = habitacionAddDto.IdEstadoHabitacion,
-                    Descripcion = habitacionAddDto.Descripcion
+                    IdEstadoHabitacion = estadoHabitacionAddDto.IdEstadoHabitacion,
+                    Descripcion = estadoHabitacionAddDto.Descripcion
                 };
 
                 estadoHabitacionRepository.Save(nuevoEstadoHabitacion);
+                result.Message = "Estado de Habitación guardado correctamente.";
 
             }
 
@@ -135,20 +125,28 @@ namespace HotelSiteTuesday.Application.Service
             return result;
         }
 
-        public ServiceResult<EstadoHabitacionGetModel> Update(EstadoHabitacionUpdateDto habitacionUpdate)
+        public ServiceResult<EstadoHabitacionGetModel> Update(EstadoHabitacionUpdateDto estadoHabitacionUpdate)
         {
             var result = new ServiceResult<EstadoHabitacionGetModel>();
 
             try
             {
-                ValidarEstadoHabitacion(habitacionUpdate);
+                var resultIsValid = this.IsValid(estadoHabitacionUpdate, DtoAction.Update);
+
+                if (!resultIsValid.Success)
+                {
+                    result.Message = resultIsValid.Message;
+                    return result;
+                }
 
                 var estadoHabitacion = new EstadoHabitacion
                 {
-                    Descripcion = habitacionUpdate.Descripcion,
+                    Descripcion = estadoHabitacionUpdate.Descripcion,
                 };
 
                 estadoHabitacionRepository.Update(estadoHabitacion);
+                result.Message = "Estado de Habitación actualizado correctamente.";
+
             }
 
             catch (Exception ex)
@@ -161,25 +159,19 @@ namespace HotelSiteTuesday.Application.Service
             return result;
         }
 
-        public ServiceResult<EstadoHabitacionGetModel> Remove(EstadoHabitacionRemoveDto habitacionRemoveDto)
+        public ServiceResult<EstadoHabitacionGetModel> Remove(EstadoHabitacionRemoveDto estadoHabitacionRemove)
         {
             var result = new ServiceResult<EstadoHabitacionGetModel>();
 
             try
             {
-                if (this.estadoHabitacionRepository.Exists(ca => ca.IdEstadoHabitacion == habitacionRemoveDto.IdEstadoHabitacion))
-                {
-                    result.Success = false;
-                    result.Message = $"El estado de la habitacion con el ID {habitacionRemoveDto.IdEstadoHabitacion} no existe.";
-                    return result;
-                }
-
                 var estadoHabitacion = new EstadoHabitacion
                 {
-                    IdEstadoHabitacion = habitacionRemoveDto.IdEstadoHabitacion,
+                    IdEstadoHabitacion = estadoHabitacionRemove.IdEstadoHabitacion,
                 };
 
                 estadoHabitacionRepository.Remove(estadoHabitacion);
+                result.Message = "Estado de Habitación eliminado correctamente.";
             }
 
             catch (Exception ex)
@@ -191,5 +183,34 @@ namespace HotelSiteTuesday.Application.Service
 
             return result;
         }
+
+        private ServiceResult<string> IsValid(EstadoHabitacionDtoBase estadoHabitacionDtoBase, DtoAction action)
+        {
+            ServiceResult<string> result = new ServiceResult<string>();
+
+            if (string.IsNullOrEmpty(estadoHabitacionDtoBase.Descripcion))
+            {
+                result.Success = false;
+                result.Message = "La descripcion de la habitacion es requerida.";
+                return result;
+            }
+
+            if (estadoHabitacionDtoBase.Descripcion.Length > 50)
+            {
+                result.Success = false;
+                result.Message = "La descripcion debe tener máximo 50 caracteres.";
+                return result;
+            }
+
+            if (estadoHabitacionRepository.Exists(ca => ca.IdEstadoHabitacion == estadoHabitacionDtoBase.IdEstadoHabitacion))
+            {
+                result.Success = false;
+                result.Message = $"El estado de la habitacion {estadoHabitacionDtoBase.IdEstadoHabitacion} ya existe.";
+                return result;
+            }
+
+            return result;
+        }
+
     }
 }

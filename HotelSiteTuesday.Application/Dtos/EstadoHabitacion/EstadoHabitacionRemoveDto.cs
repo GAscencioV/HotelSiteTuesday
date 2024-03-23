@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelSiteTuesday.Application.Dtos.EstadoHabitacion
 {
-    public class EstadoHabitacionRemoveDto : EstadoHabitacionDtoBase
+    public class EstadoHabitacionRemoveDto
     {
         public int IdEstadoHabitacion { get; set; }
     }

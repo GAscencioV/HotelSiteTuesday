@@ -14,4 +14,6 @@
     <ProjectReference Include="..\HotelSiteTuesday.Infraestructure\HotelSiteTuesday.Infraestructure.csproj" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
 </Project>

@@ -2,12 +2,14 @@
 using HotelSiteTuesday.Application.Core;
 using HotelSiteTuesday.Application.Dtos;
 using HotelSiteTuesday.Application.Dtos.Enums;
+using HotelSiteTuesday.Application.Dtos.EstadoHabitacion;
 using HotelSiteTuesday.Application.Dtos.Habitacion;
 using HotelSiteTuesday.Application.Exceptions;
 using HotelSiteTuesday.Application.Models.Habitacion;
 using HotelSiteTuesday.Domain.Entities;
 using HotelSiteTuesday.Infraestructure.Interfaces;
 using HotelSiteTuesday.Infraestructure.Models.Habitacion;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace HotelSiteTuesday.Application.Service
@@ -17,13 +19,16 @@ namespace HotelSiteTuesday.Application.Service
         private readonly IHabitacionRepository habitacionRepository;
         private readonly ILoggerBase logger;
         private readonly Action<string> errorMethod;
+        private readonly IConfiguration configuration;
 
         public HabitacionServices(ILoggerBase logger, 
-                                  IHabitacionRepository habitacionRepository)
+                                  IHabitacionRepository habitacionRepository,
+                                  IConfiguration configuration)
         { 
             this.logger = logger;
             errorMethod = logger.LogError;
             this.habitacionRepository = habitacionRepository;
+            this.configuration = configuration;
         }
 
         public ServiceResult<HabitacionGetModel> Get(int Id)
@@ -37,7 +42,7 @@ namespace HotelSiteTuesday.Application.Service
                 if (habitacion == null)
                 {
                     result.Success = false;
-                    result.Message = "No existe una habitacion con ese ID.";
+                    result.Message = ("Error obteniendo las habitaciones.");
                 }
 
                 else
@@ -58,7 +63,7 @@ namespace HotelSiteTuesday.Application.Service
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Error obteniendo la habitación";
+                result.Message = ("Error obteniendo las habitaciones.");
                 errorMethod(result.Message + ex.ToString());
             }
 
@@ -87,53 +92,26 @@ namespace HotelSiteTuesday.Application.Service
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Error obteniendo las habitaciones";
+                result.Message = ("Error obteniendo las habitaciones.");
                 errorMethod(result.Message + ex.ToString());
             }
 
             return result;
         }
 
-        //Method to validate when you save a room
-        private void ValidarHabitaciones(HabitacionDtoBase habitacionDto)
-        {
-            if (string.IsNullOrEmpty(habitacionDto.Numero))
-            {
-                throw new HabitacionException("El numero de la habitacion es requerido.");
-            }
-
-            if (habitacionDto.Numero.Length > 50)
-            {
-                throw new HabitacionException("El número de la habitación debe tener máximo 50 caracteres.");
-            }
-
-            if (string.IsNullOrEmpty(habitacionDto.Detalle))
-            {
-                throw new HabitacionException("El detalle de la habitación es requerido.");
-            }
-
-            if (habitacionDto.Detalle.Length > 100)
-            {
-                throw new HabitacionException("El detalle de la habitación debe tener máximo 100 caracteres.");
-            }
-
-            if (habitacionRepository.Exists(ha => ha.Numero == habitacionDto.Numero))
-            {
-                throw new HabitacionException($"La habitación {habitacionDto.Numero} ya existe.");
-            }
-
-            if (habitacionRepository.Exists(ha => ha.IdHabitacion == habitacionDto.IdHabitacion))
-            {
-                throw new HabitacionException($"La habitacion {habitacionDto.IdHabitacion} no existe.");
-            }
-        }
         public ServiceResult<HabitacionGetModel> Save(HabitacionAddDto habitacionAddDto)
         {
             var result = new ServiceResult<HabitacionGetModel>();
 
             try
             {
-                ValidarHabitaciones(habitacionAddDto);
+                var resultIsValid = this.IsValid(habitacionAddDto, DtoAction.Save);
+
+                if (!resultIsValid.Success)
+                {
+                    result.Message = resultIsValid.Message;
+                    return result;
+                }
 
                 var nuevaHabitacion = new Domain.Entities.Habitacion
                 {
@@ -143,6 +121,7 @@ namespace HotelSiteTuesday.Application.Service
                 };
 
                 habitacionRepository.Save(nuevaHabitacion);
+                result.Message = "Habitación guardada correctamente.";
             }
 
             catch (HabitacionException ex)
@@ -155,7 +134,7 @@ namespace HotelSiteTuesday.Application.Service
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Error obteniendo las habitaciones";
+                result.Message = ("Error obteniendo las habitaciones.");
                 errorMethod(result.Message + ex.ToString());
             }
 
@@ -168,7 +147,13 @@ namespace HotelSiteTuesday.Application.Service
 
             try
             {
-                ValidarHabitaciones(habitacionUpdate);
+                var resultIsValid = this.IsValid(habitacionUpdate, DtoAction.Update);
+
+                if (!resultIsValid.Success)
+                {
+                    result.Message = resultIsValid.Message;
+                    return result;
+                }
 
                 var habitacion = new Habitacion
                 {
@@ -179,12 +164,13 @@ namespace HotelSiteTuesday.Application.Service
                 };
 
                 habitacionRepository.Update(habitacion);
+                result.Message = "Habitación actualizada correctamente.";
             }
 
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Error al actualizar la habitación.";
+                result.Message = ("Error al actualizar la habitación.");
                 errorMethod(result.Message + ex.ToString());
             }
 
@@ -203,6 +189,7 @@ namespace HotelSiteTuesday.Application.Service
                 };
 
                 habitacionRepository.Remove(habitacion);
+                result.Message = "Habitación eliminada correctamente.";
             }
 
             catch (Exception ex)
@@ -210,6 +197,51 @@ namespace HotelSiteTuesday.Application.Service
                 result.Success = false;
                 result.Message = "Error al eliminar la habitación.";
                 errorMethod(result.Message + ex.ToString());
+            }
+
+            return result;
+        }
+
+        private ServiceResult<string> IsValid(HabitacionDtoBase habitacionDtoBase, DtoAction action)
+        { 
+            ServiceResult<string> result = new ServiceResult<string>();
+
+            if (string.IsNullOrEmpty(habitacionDtoBase.Numero))
+            {
+                result.Success = false;
+                result.Message = "El numero de la habitacion es requerido.";
+                return result;
+            }
+
+            if (habitacionDtoBase.Numero.Length > 50)
+            {
+                result.Success = false;
+                result.Message = "El número de la habitación debe tener máximo 50 caracteres.";
+                return result;
+            }
+
+            if (string.IsNullOrEmpty(habitacionDtoBase.Detalle))
+            {
+                result.Success = false; 
+                result.Message = "El detalle de la habitación es requerido.";
+                return result;
+            }
+
+            if (habitacionDtoBase.Detalle.Length > 100)
+            {
+                result.Success = false;
+                result.Message = "El detalle de la habitación debe tener máximo 100 caracteres.";
+                return result;
+            }
+
+            if (action == DtoAction.Save)
+            {
+                if (habitacionRepository.Exists(ha => ha.Numero == habitacionDtoBase.Numero))
+                {
+                    result.Success = false;
+                    result.Message = $"La habitación {habitacionDtoBase.Numero} ya existe.";
+                    return result;
+                }
             }
 
             return result;

@@ -4,6 +4,5 @@
     {
         public int IdHabitacion { get; set; }
         public string? Numero { get; set; }
-
     }
 }
